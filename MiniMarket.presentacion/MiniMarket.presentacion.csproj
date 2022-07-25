@@ -76,5 +76,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiniMarket.Entidades\MiniMarket.Entidades.csproj">
+      <Project>{3d7c1668-7390-487e-abcb-7c5f8ccf2e04}</Project>
+      <Name>MiniMarket.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniMarket.Negocio\MiniMarket.Negocio.csproj">
+      <Project>{76eb35b9-e9d5-45f0-851f-9038c75a9374}</Project>
+      <Name>MiniMarket.Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

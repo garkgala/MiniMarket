@@ -1,0 +1,12 @@
+Proceso de creaccion de proyecto en arquitectura N-capas WinForms
+
+1.Creamos proyecto tipo .Net Framework (recomendable ponerle ".presentacion" ya que esta seria la capa presentacion)
+2.Dentro de la solucion creamos el resto de proyectos (CAPAS) de tipo biblioteca de clases de .net framework
+las cuales se dividen en Entidades, Datos, Negocio.
+3. Agregamos las referrencias necesarias para trabajar de la siguiente manera:
+	Capa presentacion => Entidades y Negocio.
+	Capa Negocio =>  Entidades y datos.
+	Capa Datos => Entidades.
+
+Capa datos:
+1. Creamos la clase Conexion.

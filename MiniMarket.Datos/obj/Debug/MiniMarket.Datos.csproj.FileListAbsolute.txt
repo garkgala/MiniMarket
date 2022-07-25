@@ -1,0 +1,9 @@
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\bin\Debug\MiniMarket.Datos.dll
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\bin\Debug\MiniMarket.Datos.pdb
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\bin\Debug\MiniMarket.Entidades.dll
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\bin\Debug\MiniMarket.Entidades.pdb
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\obj\Debug\MiniMarket.Datos.csproj.AssemblyReference.cache
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\obj\Debug\MiniMarket.Datos.csproj.CoreCompileInputs.cache
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\obj\Debug\MiniMarket.Datos.csproj.CopyComplete
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\obj\Debug\MiniMarket.Datos.dll
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.Datos\obj\Debug\MiniMarket.Datos.pdb

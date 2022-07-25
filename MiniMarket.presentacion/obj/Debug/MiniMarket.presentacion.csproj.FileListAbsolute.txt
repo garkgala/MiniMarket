@@ -1,0 +1,14 @@
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.presentacion.exe.config
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.presentacion.exe
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.presentacion.pdb
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.Entidades.dll
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.Negocio.dll
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.Entidades.pdb
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.Negocio.pdb
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.csproj.AssemblyReference.cache
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.Properties.Resources.resources
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.csproj.GenerateResource.cache
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.csproj.CoreCompileInputs.cache
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.csproj.CopyComplete
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.exe
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.pdb
