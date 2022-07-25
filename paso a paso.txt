@@ -10,3 +10,5 @@ las cuales se dividen en Entidades, Datos, Negocio.
 
 Capa datos:
 1. Creamos la clase Conexion.
+2.Creamos las primeras tablas de la base de datos.
+3. Creamos el formulario para gestionar las categorias.
