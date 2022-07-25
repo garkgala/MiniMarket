@@ -217,6 +217,7 @@ namespace MiniMarket.presentacion
             this.Controls.Add(this.Tbp_principal);
             this.Name = "Frm_Categorias";
             this.Text = "Categorias";
+            this.Load += new System.EventHandler(this.Frm_Categorias_Load);
             this.Tbp_principal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

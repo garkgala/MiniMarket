@@ -21,9 +21,9 @@ namespace MiniMarket.Datos
         //Instanciamos la clase y le asignamos los valores a las variables.
         private conexion()
         {
-            this.Base = "BD_MINIMARKET";
+            this.Base = "DB_MINIMARKET";
             this.Servidor = "LAPTOP-ICSLPP1J";
-            this.Usuario = "lbandherd";
+            this.Usuario = "lbandher";
             this.Clave = "l700305*";
             this.Seguridad = false;
         }

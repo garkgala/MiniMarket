@@ -13,3 +13,5 @@ C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentaci
 C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.exe
 C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.pdb
 C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.Frm_Categorias.resources
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.Datos.dll
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\bin\Debug\MiniMarket.Datos.pdb
