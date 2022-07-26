@@ -45,6 +45,7 @@ namespace MiniMarket.presentacion
             this.Txt_descripcion_ca = new System.Windows.Forms.TextBox();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Btn_guardar = new System.Windows.Forms.Button();
+            this.Btn_retornar = new System.Windows.Forms.Button();
             this.Tbp_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -77,6 +78,7 @@ namespace MiniMarket.presentacion
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Btn_retornar);
             this.tabPage2.Controls.Add(this.Btn_guardar);
             this.tabPage2.Controls.Add(this.Btn_cancelar);
             this.tabPage2.Controls.Add(this.Txt_descripcion_ca);
@@ -97,6 +99,7 @@ namespace MiniMarket.presentacion
             this.Btn_nuevo.TabIndex = 1;
             this.Btn_nuevo.Text = "Nuevo";
             this.Btn_nuevo.UseVisualStyleBackColor = true;
+            this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
             // Btn_actualizar
             // 
@@ -106,6 +109,7 @@ namespace MiniMarket.presentacion
             this.Btn_actualizar.TabIndex = 1;
             this.Btn_actualizar.Text = "Actualizar";
             this.Btn_actualizar.UseVisualStyleBackColor = true;
+            this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
             // 
             // Btn_eliminar
             // 
@@ -173,11 +177,11 @@ namespace MiniMarket.presentacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 80);
+            this.label2.Location = new System.Drawing.Point(31, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Categoria";
+            this.label2.Text = "Categoria (*):";
             // 
             // Txt_descripcion_ca
             // 
@@ -194,15 +198,28 @@ namespace MiniMarket.presentacion
             this.Btn_cancelar.TabIndex = 2;
             this.Btn_cancelar.Text = "Cancelar";
             this.Btn_cancelar.UseVisualStyleBackColor = true;
+            this.Btn_cancelar.Visible = false;
+            this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
             // Btn_guardar
             // 
-            this.Btn_guardar.Location = new System.Drawing.Point(223, 127);
+            this.Btn_guardar.Location = new System.Drawing.Point(222, 127);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(75, 23);
             this.Btn_guardar.TabIndex = 2;
             this.Btn_guardar.Text = "Guardar";
             this.Btn_guardar.UseVisualStyleBackColor = true;
+            this.Btn_guardar.Visible = false;
+            this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
+            // 
+            // Btn_retornar
+            // 
+            this.Btn_retornar.Location = new System.Drawing.Point(327, 127);
+            this.Btn_retornar.Name = "Btn_retornar";
+            this.Btn_retornar.Size = new System.Drawing.Size(75, 23);
+            this.Btn_retornar.TabIndex = 3;
+            this.Btn_retornar.Text = "Retornar";
+            this.Btn_retornar.UseVisualStyleBackColor = true;
             // 
             // Frm_Categorias
             // 
@@ -246,5 +263,6 @@ namespace MiniMarket.presentacion
         private System.Windows.Forms.Button Btn_cancelar;
         private System.Windows.Forms.TextBox Txt_descripcion_ca;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Btn_retornar;
     }
 }
