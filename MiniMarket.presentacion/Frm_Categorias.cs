@@ -20,7 +20,7 @@ namespace MiniMarket.presentacion
         }
         #region "Variables"
         int Estadoguarda = 0; //Sin ninguna accion
-
+        int Codigo_ca = 0;
         #endregion
 
         #region "Mis metodos"
@@ -58,6 +58,18 @@ namespace MiniMarket.presentacion
             this.Btn_guardar.Visible = lEstado;
             this.Btn_retornar.Visible = !lEstado;
         }
+        private void Selecciona_Item()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
+            {
+                MessageBox.Show("No se tiene informacion para visualizar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }else
+            {
+                this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
+                Txt_descripcion_ca.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_ca"].Value);
+            }
+        }
+
         #endregion
 
         private void Frm_Categorias_Load(object sender, EventArgs e)
@@ -76,7 +88,7 @@ namespace MiniMarket.presentacion
             {
                 string Rpta = "";
                 E_Categorias oCa = new E_Categorias();
-                oCa.Codigo_ca = 0;
+                oCa.Codigo_ca = this.Codigo_ca;
                 oCa.Descripcion_ca = Txt_descripcion_ca.Text.Trim();
                 Rpta = N_Categorias.Guardar_ca(Estadoguarda, oCa);
                 if (Rpta == "ok")
@@ -89,6 +101,7 @@ namespace MiniMarket.presentacion
                     this.Txt_descripcion_ca.ReadOnly = true;
                     Txt_descripcion_ca.Text = "";
                     Tbp_principal.SelectedIndex = 0;
+                    this.Codigo_ca = 0;
                 }
                 else
                 {
@@ -110,6 +123,14 @@ namespace MiniMarket.presentacion
         private void Btn_actualizar_Click(object sender, EventArgs e)
         {
           Estadoguarda   = 2; //Actualizar registro
+            this.Estado_BotonesPrincipales(false);
+            this.Estado_Botonesprocesos(true);
+            Txt_descripcion_ca.Text = "";
+            this.Selecciona_Item();
+            Txt_descripcion_ca.ReadOnly = false;
+            Tbp_principal.SelectedIndex = 1;
+            Txt_descripcion_ca.Focus();
+
         }
 
         private void Btn_cancelar_Click(object sender, EventArgs e)
@@ -120,6 +141,20 @@ namespace MiniMarket.presentacion
             this.Estado_BotonesPrincipales(true);
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 0;
+        }
+
+        private void Dgv_principal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_Item();
+            this.Estado_Botonesprocesos(false);
+            Tbp_principal.SelectedIndex = 1;
+        }
+
+        private void Btn_retornar_Click(object sender, EventArgs e)
+        {
+            this.Estado_Botonesprocesos(false);
+            Tbp_principal.SelectedIndex = 0;
+            Txt_descripcion_ca.Text = "";
         }
     }
 }
