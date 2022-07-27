@@ -21,6 +21,10 @@ else --Actualizar registro
 begin
 	update TB_CATEGORIAS set descripcion_ca = @cDescripcion_ca where codigo_ca=@nCodigo_ca;
 end;
-go}
+go
 
-select * from TB_CATEGORIAS
+create procedure SP_ELIMINAR_CA
+@nCodigo_ca int=0
+as
+update TB_CATEGORIAS set estado=0 where	 codigo_ca = @nCodigo_ca;
+go

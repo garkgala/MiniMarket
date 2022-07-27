@@ -29,6 +29,8 @@ namespace MiniMarket.presentacion
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Categorias));
             this.Tbp_principal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Dgv_principal = new System.Windows.Forms.DataGridView();
@@ -46,6 +48,8 @@ namespace MiniMarket.presentacion
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Btn_reporte = new System.Windows.Forms.Button();
             this.Btn_salir = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Tbp_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
@@ -64,6 +68,7 @@ namespace MiniMarket.presentacion
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.White;
             this.tabPage1.Controls.Add(this.Dgv_principal);
             this.tabPage1.Controls.Add(this.Btn_buscar);
             this.tabPage1.Controls.Add(this.Txt_buscar);
@@ -74,7 +79,6 @@ namespace MiniMarket.presentacion
             this.tabPage1.Size = new System.Drawing.Size(732, 239);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Listado";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // Dgv_principal
             // 
@@ -90,12 +94,16 @@ namespace MiniMarket.presentacion
             // 
             // Btn_buscar
             // 
+            this.Btn_buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_buscar.ForeColor = System.Drawing.Color.White;
             this.Btn_buscar.Location = new System.Drawing.Point(269, 14);
             this.Btn_buscar.Name = "Btn_buscar";
             this.Btn_buscar.Size = new System.Drawing.Size(75, 23);
             this.Btn_buscar.TabIndex = 6;
             this.Btn_buscar.Text = "Buscar";
-            this.Btn_buscar.UseVisualStyleBackColor = true;
+            this.Btn_buscar.UseVisualStyleBackColor = false;
+            this.Btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
             // 
             // Txt_buscar
             // 
@@ -115,6 +123,7 @@ namespace MiniMarket.presentacion
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.White;
             this.tabPage2.Controls.Add(this.Btn_retornar);
             this.tabPage2.Controls.Add(this.Btn_guardar);
             this.tabPage2.Controls.Add(this.Btn_cancelar);
@@ -126,37 +135,45 @@ namespace MiniMarket.presentacion
             this.tabPage2.Size = new System.Drawing.Size(732, 239);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Btn_retornar
             // 
+            this.Btn_retornar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Btn_retornar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_retornar.ForeColor = System.Drawing.Color.White;
             this.Btn_retornar.Location = new System.Drawing.Point(327, 127);
             this.Btn_retornar.Name = "Btn_retornar";
             this.Btn_retornar.Size = new System.Drawing.Size(75, 23);
             this.Btn_retornar.TabIndex = 3;
             this.Btn_retornar.Text = "Retornar";
-            this.Btn_retornar.UseVisualStyleBackColor = true;
+            this.Btn_retornar.UseVisualStyleBackColor = false;
             this.Btn_retornar.Click += new System.EventHandler(this.Btn_retornar_Click);
             // 
             // Btn_guardar
             // 
+            this.Btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_guardar.ForeColor = System.Drawing.Color.White;
             this.Btn_guardar.Location = new System.Drawing.Point(222, 127);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(75, 23);
             this.Btn_guardar.TabIndex = 2;
             this.Btn_guardar.Text = "Guardar";
-            this.Btn_guardar.UseVisualStyleBackColor = true;
+            this.Btn_guardar.UseVisualStyleBackColor = false;
             this.Btn_guardar.Visible = false;
             this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
             // 
             // Btn_cancelar
             // 
+            this.Btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_cancelar.ForeColor = System.Drawing.Color.White;
             this.Btn_cancelar.Location = new System.Drawing.Point(122, 127);
             this.Btn_cancelar.Name = "Btn_cancelar";
             this.Btn_cancelar.Size = new System.Drawing.Size(75, 23);
             this.Btn_cancelar.TabIndex = 2;
             this.Btn_cancelar.Text = "Cancelar";
-            this.Btn_cancelar.UseVisualStyleBackColor = true;
+            this.Btn_cancelar.UseVisualStyleBackColor = false;
             this.Btn_cancelar.Visible = false;
             this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
             // 
@@ -178,56 +195,103 @@ namespace MiniMarket.presentacion
             // 
             // Btn_nuevo
             // 
-            this.Btn_nuevo.Location = new System.Drawing.Point(39, 283);
+            this.Btn_nuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Btn_nuevo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_nuevo.ImageKey = "New_Logo.png";
+            this.Btn_nuevo.ImageList = this.imageList1;
+            this.Btn_nuevo.Location = new System.Drawing.Point(18, 289);
             this.Btn_nuevo.Name = "Btn_nuevo";
-            this.Btn_nuevo.Size = new System.Drawing.Size(103, 54);
+            this.Btn_nuevo.Size = new System.Drawing.Size(75, 60);
             this.Btn_nuevo.TabIndex = 1;
             this.Btn_nuevo.Text = "Nuevo";
-            this.Btn_nuevo.UseVisualStyleBackColor = true;
+            this.Btn_nuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_nuevo.UseVisualStyleBackColor = false;
             this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
             // 
             // Btn_actualizar
             // 
-            this.Btn_actualizar.Location = new System.Drawing.Point(165, 283);
+            this.Btn_actualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Btn_actualizar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_actualizar.ImageKey = "Actualizar.png";
+            this.Btn_actualizar.ImageList = this.imageList1;
+            this.Btn_actualizar.Location = new System.Drawing.Point(99, 289);
             this.Btn_actualizar.Name = "Btn_actualizar";
-            this.Btn_actualizar.Size = new System.Drawing.Size(103, 54);
+            this.Btn_actualizar.Size = new System.Drawing.Size(75, 60);
             this.Btn_actualizar.TabIndex = 1;
             this.Btn_actualizar.Text = "Actualizar";
-            this.Btn_actualizar.UseVisualStyleBackColor = true;
+            this.Btn_actualizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_actualizar.UseVisualStyleBackColor = false;
             this.Btn_actualizar.Click += new System.EventHandler(this.Btn_actualizar_Click);
             // 
             // Btn_eliminar
             // 
-            this.Btn_eliminar.Location = new System.Drawing.Point(295, 283);
+            this.Btn_eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_eliminar.ImageKey = "Eliminar.png";
+            this.Btn_eliminar.ImageList = this.imageList1;
+            this.Btn_eliminar.Location = new System.Drawing.Point(180, 289);
             this.Btn_eliminar.Name = "Btn_eliminar";
-            this.Btn_eliminar.Size = new System.Drawing.Size(103, 54);
+            this.Btn_eliminar.Size = new System.Drawing.Size(75, 60);
             this.Btn_eliminar.TabIndex = 1;
             this.Btn_eliminar.Text = "Eliminar";
-            this.Btn_eliminar.UseVisualStyleBackColor = true;
+            this.Btn_eliminar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_eliminar.UseVisualStyleBackColor = false;
+            this.Btn_eliminar.Click += new System.EventHandler(this.Btn_eliminar_Click);
             // 
             // Btn_reporte
             // 
-            this.Btn_reporte.Location = new System.Drawing.Point(422, 283);
+            this.Btn_reporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_reporte.ImageKey = "Reporte.png";
+            this.Btn_reporte.ImageList = this.imageList1;
+            this.Btn_reporte.Location = new System.Drawing.Point(261, 289);
             this.Btn_reporte.Name = "Btn_reporte";
-            this.Btn_reporte.Size = new System.Drawing.Size(103, 54);
+            this.Btn_reporte.Size = new System.Drawing.Size(75, 60);
             this.Btn_reporte.TabIndex = 1;
             this.Btn_reporte.Text = "Reporte";
-            this.Btn_reporte.UseVisualStyleBackColor = true;
+            this.Btn_reporte.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_reporte.UseVisualStyleBackColor = false;
+            this.Btn_reporte.Click += new System.EventHandler(this.Btn_reporte_Click);
             // 
             // Btn_salir
             // 
-            this.Btn_salir.Location = new System.Drawing.Point(553, 283);
+            this.Btn_salir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_salir.ImageKey = "Salir.png";
+            this.Btn_salir.ImageList = this.imageList1;
+            this.Btn_salir.Location = new System.Drawing.Point(342, 289);
             this.Btn_salir.Name = "Btn_salir";
-            this.Btn_salir.Size = new System.Drawing.Size(103, 54);
+            this.Btn_salir.Size = new System.Drawing.Size(75, 60);
             this.Btn_salir.TabIndex = 1;
             this.Btn_salir.Text = "Salir";
-            this.Btn_salir.UseVisualStyleBackColor = true;
+            this.Btn_salir.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_salir.UseVisualStyleBackColor = false;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(787, 132);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.TabIndex = 2;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "New_Logo.png");
+            this.imageList1.Images.SetKeyName(1, "Actualizar.png");
+            this.imageList1.Images.SetKeyName(2, "Eliminar.png");
+            this.imageList1.Images.SetKeyName(3, "Reporte.png");
+            this.imageList1.Images.SetKeyName(4, "Salir.png");
             // 
             // Frm_Categorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(195)))), ((int)(((byte)(142)))));
             this.ClientSize = new System.Drawing.Size(784, 361);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.Btn_salir);
             this.Controls.Add(this.Btn_reporte);
             this.Controls.Add(this.Btn_eliminar);
@@ -266,5 +330,7 @@ namespace MiniMarket.presentacion
         private System.Windows.Forms.TextBox Txt_descripcion_ca;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_retornar;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

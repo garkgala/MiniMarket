@@ -12,4 +12,16 @@ Capa datos:
 1. Creamos la clase Conexion.
 2. Creamos las primeras tablas de la base de datos.
 3. Creamos el formulario para gestionar las categorias.
-4. Creamos las clases de las capas para las categorias; Entidades, Datos, Negocio.
+4. Creamos las clases de las capas para las categorias: Entidades, Datos, Negocio.
+5. Creamos elformulario para categorias.
+5. Programamos cada una de las funcionalidades CRUD para categorias.
+6. Para el reporte de categorias instalamos la extesion RDLC.
+7. En la capa presentacion creamos la carpeta reportes y dentro de ella agregamosun nuevo elemento de tipo conjunto de datos.
+8. Para la utilizacion del reporte debemos crear una conexion de otra forma: click derecho en la capa de presentacion
+y damos click en propiedades, nos posicionamos en configuracion y agregamos una nueva variable de typo cadena de conexion.
+9. Una vez listo la configuracion de conexion, click derecho en eldataset y le damos agregar TableAdapter.
+10. En la carpeta reportes agregamos un nuevo elemento de tipo informe y comenzamos a editar el informe.
+11. en las referencias de la capa de presentacion, administrar los paquetes nuget e instalar Microsoft.ReportingServices.ReportViewerControl.Winforms.
+12. desplegamos el apartado datos del cuadro de herramientas damos click derecho e indicamos elegir elementos,
+damos a examinar y buscamos manualmente dentro de la carpeta packages del proyecto el paquete que instalamos y agregamos el dll
+Microsoft.ReportViewer.WinForms.dll

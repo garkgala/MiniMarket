@@ -76,6 +76,7 @@ namespace MiniMarket.presentacion
         {
             this.Listado_ca("%");
             this.Formato_ca();
+            this.reportViewer1.RefreshReport();
         }
 
         private void Btn_guardar_Click(object sender, EventArgs e)
@@ -136,6 +137,7 @@ namespace MiniMarket.presentacion
         private void Btn_cancelar_Click(object sender, EventArgs e)
         {
             Estadoguarda = 0; //Sin ninguna accion
+            this.Codigo_ca = 0;
             Txt_descripcion_ca.Text = "";
             Txt_descripcion_ca.ReadOnly = true;
             this.Estado_BotonesPrincipales(true);
@@ -155,6 +157,46 @@ namespace MiniMarket.presentacion
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 0;
             Txt_descripcion_ca.Text = "";
+            this.Codigo_ca = 0;
+        }
+
+        private void Btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value)))
+            {
+                MessageBox.Show("No se tiene informacion para eliminar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("¿Esta seguro de eliminar el registro seleccionado?", "Aviso del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (Opcion==DialogResult.Yes)
+                {
+                    string Rpta = "";
+                    this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
+                    Rpta = N_Categorias.Eliminar_ca(this.Codigo_ca);
+                    if (Rpta.Equals("ok"))
+                    {
+                        this.Listado_ca("%");
+                        this.Codigo_ca = 0;
+                        MessageBox.Show("Registro eliminado", "Mensaje del sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                
+            }
+
+        }
+
+        private void Btn_buscar_Click(object sender, EventArgs e)
+        {
+            this.Listado_ca(Txt_buscar.Text.Trim());
+        }
+
+        private void Btn_reporte_Click(object sender, EventArgs e)
+        {
+            Reportes.Frm_Rpt_Categorias oRpt1 = new Reportes.Frm_Rpt_Categorias();
+            oRpt1.txt_p1.Text = Txt_buscar.Text;
+            oRpt1.ShowDialog();
         }
     }
 }
