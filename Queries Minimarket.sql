@@ -28,3 +28,44 @@ create procedure SP_ELIMINAR_CA
 as
 update TB_CATEGORIAS set estado=0 where	 codigo_ca = @nCodigo_ca;
 go
+select * from TB_CATEGORIAS
+
+--para reestablecer el numero que se coloca automaticamente en el identity de una tabla (el codigo)
+ dbcc CHECKIDENT (TB_CATEGORIAS, reseed, 6)
+ go
+
+ sp_helptext SP_ELIMINAR_CA
+ go
+ 
+ Create procedure Sp_Listado_ma
+@cTexto varchar(40)=''  
+as  
+ select codigo_ma, descripcion_ma   
+ from dbo.TB_MARCAS   
+ WHERE estado=1 and   
+ upper(trim(cast(codigo_ma as char)) + trim(descripcion_ma))   
+ like '%' + upper(trim(@cTexto)) + '%';  
+
+ go
+
+   
+CREATE PROCEDURE Sp_Guardar_ma  
+@nOpcion int=0,  
+@nCodigo_ma int =0,  
+@cDescripcion_ma varchar(40)=''  
+as  
+if @nOpcion=1 --Nuevo registro  
+begin  
+ Insert into TB_MARCAS(descripcion_ma, estado) values (@cDescripcion_ma, 1);  
+end;  
+else --Actualizar registro  
+begin  
+ update TB_MARCAS set descripcion_ma = @cDescripcion_ma where codigo_ma=@nCodigo_ma;  
+end;  
+
+go
+
+create procedure SP_ELIMINAR_MA  
+@nCodigo_ma int=0  
+as  
+update TB_MARCAS set estado=0 where  codigo_ma = @nCodigo_ma;  
