@@ -69,3 +69,59 @@ create procedure SP_ELIMINAR_MA
 @nCodigo_ma int=0  
 as  
 update TB_MARCAS set estado=0 where  codigo_ma = @nCodigo_ma;  
+
+go
+
+CREATE PROCEDURE Sp_Guardar_ma  
+@nOpcion int=0,  
+@nCodigo_ma int =0,  
+@cDescripcion_ma varchar(40)=''  
+as  
+if @nOpcion=1 --Nuevo registro  
+begin  
+ Insert into TB_MARCAS(descripcion_ma, estado) values (@cDescripcion_ma, 1);  
+end;  
+else --Actualizar registro  
+begin  
+ update TB_MARCAS set descripcion_ma = @cDescripcion_ma where codigo_ma=@nCodigo_ma;  
+end;  
+
+go
+
+ Create procedure Sp_Listado_um
+@cTexto varchar(20)=''  
+as  
+ select codigo_um, abreviatura_um, descripcion_um   
+ from dbo.TB_UNIDADES_MEDIDA   
+ WHERE estado=1 and   
+ upper(trim(cast(codigo_um as char)) 
+ + trim(abreviatura_um) 
+ + trim(descripcion_um))   
+ like '%' + upper(trim(@cTexto)) + '%';  
+
+ go
+
+ CREATE PROCEDURE Sp_Guardar_um  
+@nOpcion int=0,  
+@nCodigo_um int =0,  
+@cDescripcion_um varchar(40)='',
+@cAbreviatura_um varchar(3)
+as  
+if @nOpcion=1 --Nuevo registro  
+begin  
+ Insert into TB_UNIDADES_MEDIDA(abreviatura_um,
+								descripcion_um, 
+								estado) 
+						values (@cAbreviatura_um,
+								@cDescripcion_um, 
+								1);  
+end;  
+else --Actualizar registro  
+begin  
+ update TB_UNIDADES_MEDIDA set	abreviatura_um = @cAbreviatura_um, 
+								descripcion_um = @cDescripcion_um 
+							where codigo_um=@nCodigo_um;  
+end; 
+
+go
+
