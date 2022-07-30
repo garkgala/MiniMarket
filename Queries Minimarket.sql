@@ -123,5 +123,22 @@ begin
 							where codigo_um=@nCodigo_um;  
 end; 
 
-go
+GO
 
+create procedure SP_ELIMINAR_UM  
+@nCodigo_um int=0  
+as  
+update TB_UNIDADES_MEDIDA set estado=0 where  codigo_um = @nCodigo_um;  
+
+GO
+
+ Create procedure Sp_Listado_al
+@cTexto varchar(40)=''  
+as  
+ select codigo_al, descripcion_al  
+ from dbo.TB_ALMACENES  
+ WHERE estado=1 and   
+ upper(trim(cast(codigo_al as char)) + trim(descripcion_al))   
+ like '%' + upper(trim(@cTexto)) + '%';  
+
+ go
