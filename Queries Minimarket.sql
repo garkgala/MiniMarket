@@ -141,4 +141,106 @@ as
  upper(trim(cast(codigo_al as char)) + trim(descripcion_al))   
  like '%' + upper(trim(@cTexto)) + '%';  
 
- go
+ GO
+
+ CREATE PROCEDURE Sp_Guardar_al 
+@nOpcion int=0,  
+@nCodigo_al int =0,  
+@cDescripcion_al varchar(40)=''  
+as  
+if @nOpcion=1 --Nuevo registro  
+begin  
+ Insert into TB_ALMACENES(descripcion_al, estado) values (@cDescripcion_al, 1);  
+end;  
+else --Actualizar registro  
+begin  
+ update TB_ALMACENES set descripcion_al = @cDescripcion_al where codigo_al=@nCodigo_al;  
+end;  
+
+
+GO
+
+create procedure SP_ELIMINAR_AL 
+@nCodigo_al int=0  
+as  
+update TB_ALMACENES set estado=0 where  codigo_al = @nCodigo_al;  
+
+GO
+
+ Create procedure Sp_Listado_pr
+@cTexto varchar(100)=''  
+as  
+ select a.codigo_pr, 
+		a.descripcion_pr,
+		b.descripcion_ma,
+		c.descripcion_um,
+		d.descripcion_ca,
+		a.stock_max,
+		a.stock_max,
+		a.codigo_ma,
+		a.codigo_ca,
+		a.codigo_um
+ from dbo.TB_PRODUCTOS         a
+ inner join TB_Marcas          b on a.codigo_ma = b.codigo_ma
+ inner join TB_UNIDADES_MEDIDA c on c.codigo_um = a.codigo_um
+ inner join TB_CATEGORIAS      d on d.codigo_ca = a.codigo_ca
+ WHERE a.estado=1 and   
+ upper	(trim(cast(a.codigo_pr as char)) +
+		trim(a.descripcion_pr)+
+		trim(b.descripcion_ma)+
+		trim(c.descripcion_um)+
+		trim(d.descripcion_ca))
+ like '%' + upper(trim(@cTexto)) + '%'
+ order by a.codigo_pr;
+
+ GO
+
+ CREATE PROCEDURE Sp_Guardar_pr    
+@nOpcion int=0,    
+@nCodigo_pr int =0,    
+@cDescripcion_pr varchar(100)='',
+@nCodigo_ma int = 0,
+@nCodigo_um int = 0,
+@nCodigo_ca int = 0,
+@nStock_min decimal(10,2)=0,
+@nStock_max decimal(10,2)=0
+as    
+declare @xCodigo int = 0
+declare @fFecha as datetime
+set @fFecha = convert(datetime, GETDATE())
+if @nOpcion=1 --Nuevo registro    
+begin    
+ INSERT INTO TB_PRODUCTOS(descripcion_pr,
+							codigo_ma,
+							codigo_um,
+							codigo_ca,
+							stock_min,
+							stock_max,
+							fecha_crea,
+							fecha_modifica,
+							estado)
+						VALUES
+							(@cDescripcion_pr,
+							@nCodigo_ma,
+							@nCodigo_um,
+							@nCodigo_ca,
+							@nStock_min,
+							@nStock_max,
+							@fFecha,
+							@fFecha,
+							1);
+end;    
+else --Actualizar registro    
+begin    
+ UPDATE TB_PRODUCTOS SET descripcion_pr=@cDescripcion_pr,
+						codigo_ma = @nCodigo_ma,
+						codigo_um = @nCodigo_um,
+						codigo_ca = @nCodigo_ca,
+						stock_min = @nStock_min,
+						stock_max = @nStock_max,
+						fecha_modifica = @fFecha
+					WHERE
+						codigo_pr = @nCodigo_pr;
+end; 
+
+GO

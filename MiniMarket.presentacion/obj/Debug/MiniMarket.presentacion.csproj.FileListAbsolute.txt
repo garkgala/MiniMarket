@@ -82,3 +82,4 @@ C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentaci
 C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.Reportes.Frm_Rpt_Unidades_Medidas.resources
 C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.Frm_Almacenes.resources
 C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.Reportes.Frm_Rpt_Almacenes.resources
+C:\Users\leone\Documents\Visual Studio 2019\Sol_MiniMarket\MiniMarket.presentacion\obj\Debug\MiniMarket.presentacion.Frm_Productos.resources
