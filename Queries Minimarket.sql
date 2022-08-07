@@ -143,14 +143,25 @@ as
 
  GO
 
- CREATE PROCEDURE Sp_Guardar_al 
+ ALTER PROCEDURE Sp_Guardar_al 
 @nOpcion int=0,  
 @nCodigo_al int =0,  
 @cDescripcion_al varchar(40)=''  
-as  
+as 
+declare @xCodigo int=0
 if @nOpcion=1 --Nuevo registro  
 begin  
- Insert into TB_ALMACENES(descripcion_al, estado) values (@cDescripcion_al, 1);  
+ Insert into TB_ALMACENES(descripcion_al, estado) values (@cDescripcion_al, 1); 
+ set @xCodigo = @@IDENTITY
+ INSERT INTO TB_STOCK_PRODUCTOS (codigo_pr,
+								codigo_al,
+								stock_actual,
+								pu_compra)
+							SELECT codigo_pr,
+									@xCodigo,
+									0.00,
+									0.00
+							FROM TB_PRODUCTOS;
 end;  
 else --Actualizar registro  
 begin  
@@ -229,6 +240,17 @@ begin
 							@fFecha,
 							@fFecha,
 							1);
+		set @xCodigo = @@IDENTITY --obtiene el codigo que se genero automaticamente
+
+		INSERT INTO TB_STOCK_PRODUCTOS(codigo_pr, 
+										codigo_al,
+										stock_actual,
+										pu_compra)
+									SELECT @xCodigo,
+											codigo_al,
+											0.00,
+											0.00
+									FROM TB_ALMACENES
 end;    
 else --Actualizar registro    
 begin    
@@ -241,6 +263,106 @@ begin
 						fecha_modifica = @fFecha
 					WHERE
 						codigo_pr = @nCodigo_pr;
+--hacemos una insercion en un nuevo almacen en el caso de que este no existia al momento de crear el producto inicialmente
+ INSERT INTO TB_STOCK_PRODUCTOS			(codigo_pr, 
+										codigo_al,
+										stock_actual,
+										pu_compra)
+									SELECT @nCodigo_pr,
+											codigo_al,
+											0.00,
+											0.00
+									FROM TB_ALMACENES --Filtramos para que no se haga la insercion en los almacenes iniciales
+									WHERE codigo_al not in (select codigo_al 
+															from TB_STOCK_PRODUCTOS 
+															where codigo_pr=@nCodigo_pr)
 end; 
+
+GO
+
+create procedure SP_ELIMINAR_pr    
+@nCodigo_pr int=0    
+as    
+update TB_PRODUCTOS set estado=0 where  codigo_pr = @nCodigo_pr; 
+
+GO
+
+ Create procedure Sp_Listado_ma_pr
+@cTexto varchar(40)=''    
+as    
+ select  descripcion_ma, codigo_ma     
+ from dbo.TB_MARCAS     
+ WHERE estado=1 and     
+ upper(trim(descripcion_ma))     
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+ Create procedure Sp_Listado_um_pr  
+@cTexto varchar(20)=''      
+as      
+ select  descripcion_um, codigo_um      
+ from dbo.TB_UNIDADES_MEDIDA       
+ WHERE estado=1 and       
+ upper(trim(descripcion_um))       
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+  Create procedure Sp_Listado_ca_pr  
+@cTexto varchar(20)=''      
+as      
+ select  descripcion_ca, codigo_ca      
+ from dbo.TB_CATEGORIAS    
+ WHERE estado=1 and       
+ upper(trim(descripcion_ca))       
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+ CREATE PROCEDURE SP_Ver_Stock_Actual_ProductoxAlmacenes
+ @nCodigo_pr int =0
+ as
+ select c.descripcion_al,
+		b.stock_actual,
+		b.pu_compra
+ FROM TB_STOCK_PRODUCTOS b
+ INNER JOIN TB_ALMACENES c on b.codigo_al = c.codigo_al
+ WHERE b.codigo_pr = @nCodigo_pr
+ ORDER BY b.codigo_al
+ 
+GO
+
+ Create procedure Sp_Listado_ru  
+@cTexto varchar(60)=''    
+as    
+ select codigo_ru, descripcion_ru     
+ from dbo.TB_RUBROS     
+ WHERE estado=1 and     
+ upper(trim(cast(codigo_ru as char)) + trim(descripcion_ru))     
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+CREATE PROCEDURE Sp_Guardar_ru    
+@nOpcion int=0,    
+@nCodigo_ru int =0,    
+@cDescripcion_ru varchar(60)=''    
+as    
+if @nOpcion=1 --Nuevo registro    
+begin    
+ Insert into TB_RUBROS(descripcion_ru, estado) values (@cDescripcion_ru, 1);    
+end;    
+else --Actualizar registro    
+begin    
+ update TB_RUBROS set descripcion_ru = @cDescripcion_ru where codigo_ru=@nCodigo_ru;    
+end; 
+
+GO
+
+create procedure SP_ELIMINAR_RU    
+@nCodigo_ru int=0    
+as    
+update TB_RUBROS set estado=0 where  codigo_ru = @nCodigo_ru; 
 
 GO

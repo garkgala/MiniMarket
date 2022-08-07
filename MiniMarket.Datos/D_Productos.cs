@@ -54,7 +54,7 @@ namespace MiniMarket.Datos
                 comando.Parameters.Add("@nStock_min", SqlDbType.Decimal).Value = oPr.Stock_min;
                 comando.Parameters.Add("@nStock_max", SqlDbType.Decimal).Value = oPr.Stock_max;
                 SqlCon.Open();
-                Rpta = comando.ExecuteNonQuery() == 1 ? "ok" : "No se pudo registrar los datos";
+                Rpta = comando.ExecuteNonQuery() >= 1 ? "ok" : "No se pudo registrar los datos";
             }
             catch (Exception ex)
             {
@@ -101,6 +101,83 @@ namespace MiniMarket.Datos
                 SqlCommand Comando = new SqlCommand("Sp_Listado_ma_pr", SQLCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SQLCon.Open();
+                resultado = Comando.ExecuteReader();
+                Tabla.Load(resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SQLCon.State == ConnectionState.Open) SQLCon.Close();
+            }
+        }
+        public DataTable Listado_um_pr(string cTexto)
+        {
+            SqlDataReader resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SQLCon = new SqlConnection();
+            try
+            {
+                SQLCon = conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("Sp_Listado_um_pr", SQLCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SQLCon.Open();
+                resultado = Comando.ExecuteReader();
+                Tabla.Load(resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SQLCon.State == ConnectionState.Open) SQLCon.Close();
+            }
+        }
+
+        public DataTable Listado_ca_pr(string cTexto)
+        {
+            SqlDataReader resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SQLCon = new SqlConnection();
+            try
+            {
+                SQLCon = conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("Sp_Listado_ca_pr", SQLCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SQLCon.Open();
+                resultado = Comando.ExecuteReader();
+                Tabla.Load(resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SQLCon.State == ConnectionState.Open) SQLCon.Close();
+            }
+        }
+
+        public DataTable Ver_Stock_Actual_ProductoxAlmacenes(int nCodigo_pr)
+        {
+            SqlDataReader resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SQLCon = new SqlConnection();
+            try
+            {
+                SQLCon = conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("SP_Ver_Stock_Actual_ProductoxAlmacenes", SQLCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@nCodigo_pr", SqlDbType.Int).Value = nCodigo_pr;
                 SQLCon.Open();
                 resultado = Comando.ExecuteReader();
                 Tabla.Load(resultado);

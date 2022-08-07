@@ -77,13 +77,21 @@ namespace MiniMarket.presentacion
         }
         private void Selecciona_Item()
         {
-            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_al"].Value)))
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_principal.CurrentRow.Cells["codigo_pr"].Value)))
             {
                 MessageBox.Show("No se tiene informacion para visualizar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }else
             {
                 this.Codigo_pr = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_pr"].Value);
                 Txt_descripcion_pr.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_pr"].Value);
+                this.Codigo_ma = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ma"].Value);
+                Txt_descripcion_ma.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_ma"].Value);
+                this.Codigo_ca = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_ca"].Value);
+                Txt_descripcion_ca.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_ca"].Value);
+                this.Codigo_um = Convert.ToInt32(Dgv_principal.CurrentRow.Cells["codigo_um"].Value);
+                Txt_descripcion_um.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["descripcion_um"].Value);
+                Txt_stock_min.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["stock_min"].Value);
+                Txt_stock_max.Text = Convert.ToString(Dgv_principal.CurrentRow.Cells["stock_max"].Value);
             }
         }
         private void Formato_ma_pr()
@@ -118,17 +126,109 @@ namespace MiniMarket.presentacion
             }
         }
 
+        private void Formato_um_pr()
+        {
+            Dgv_medidas.Columns[0].Width = 225;
+            Dgv_medidas.Columns[0].HeaderText = "MEDIDAS";
+            Dgv_medidas.Columns[1].Visible = false;
+        }
+
+        private void Listado_um_pr(string cTexto)
+        {
+            try
+            {
+                Dgv_medidas.DataSource = N_Productos.Listado_um_pr(cTexto);
+                this.Formato_um_pr();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+        private void Selecciona_Item_um_pr()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_medidas.CurrentRow.Cells["codigo_um"].Value)))
+            {
+                MessageBox.Show("No se tiene informacion para visualizar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Codigo_um = Convert.ToInt32(Dgv_medidas.CurrentRow.Cells["codigo_um"].Value);
+                Txt_descripcion_um.Text = Convert.ToString(Dgv_medidas.CurrentRow.Cells["descripcion_um"].Value);
+            }
+        }
+
+        private void Formato_ca_pr()
+        {
+            Dgv_categorias.Columns[0].Width = 225;
+            Dgv_categorias.Columns[0].HeaderText = "CATEGORIAS";
+            Dgv_categorias.Columns[1].Visible = false;
+        }
+
+        private void Listado_ca_pr(string cTexto)
+        {
+            try
+            {
+                Dgv_categorias.DataSource = N_Productos.Listado_ca_pr(cTexto);
+                this.Formato_ca_pr();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+        private void Selecciona_Item_ca_pr()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_categorias.CurrentRow.Cells["codigo_ca"].Value)))
+            {
+                MessageBox.Show("No se tiene informacion para visualizar", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                this.Codigo_ca = Convert.ToInt32(Dgv_categorias.CurrentRow.Cells["codigo_ca"].Value);
+                Txt_descripcion_ca.Text = Convert.ToString(Dgv_categorias.CurrentRow.Cells["descripcion_ca"].Value);
+            }
+        }
+
+        private void Formato_stock_actual()
+        {
+            Dgv_stock_actual.Columns[0].Width = 170;
+            Dgv_stock_actual.Columns[0].HeaderText = "ALMACEN";
+            Dgv_stock_actual.Columns[1].Width = 75;
+            Dgv_stock_actual.Columns[1].HeaderText = "STOCK ACTUAL";
+            Dgv_stock_actual.Columns[2].Width = 75;
+            Dgv_stock_actual.Columns[2].HeaderText = "P.U. COMPRA";
+        }
+
+        private void Listado_stock_actual(int nCodigo_pr)
+        {
+            try
+            {
+                Dgv_stock_actual.DataSource = N_Productos.Ver_Stock_Actual_ProductoxAlmacenes(nCodigo_pr);
+                this.Formato_stock_actual();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
         #endregion
 
         private void Frm_Productos_Load(object sender, EventArgs e)
         {
             this.Listado_pr("%");
             this.Listado_ma_pr("%");
+            this.Listado_um_pr("%");
+            this.Listado_ca_pr("%");
         }
 
         private void Btn_guardar_Click(object sender, EventArgs e)
         {
-            if(Txt_descripcion_pr.Text == string.Empty)//Valida los datos que se estan enviando
+            if( Txt_descripcion_pr.Text == string.Empty ||
+                Txt_descripcion_ma.Text == string.Empty ||
+                Txt_descripcion_um.Text == string.Empty ||
+                Txt_descripcion_ca.Text == string.Empty)//Valida los datos que se estan enviando
             {
                 MessageBox.Show("Falta ingresar datos requerido (*)", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -137,6 +237,11 @@ namespace MiniMarket.presentacion
                 string Rpta = "";
                 E_Productos oPr = new E_Productos();
                 oPr.Codigo_pr = this.Codigo_pr;
+                oPr.Codigo_ca = this.Codigo_ca;
+                oPr.Codigo_ma = this.Codigo_ma;
+                oPr.Codigo_um = this.Codigo_um;
+                oPr.Stock_min = Convert.ToDecimal(Txt_stock_min.Text);
+                oPr.Stock_max = Convert.ToDecimal(Txt_stock_max.Text);
                 oPr.Descripcion_pr = Txt_descripcion_pr.Text.Trim();
                 Rpta = N_Productos.Guardar_pr(Estadoguarda, oPr);
                 if (Rpta == "ok")
@@ -148,8 +253,14 @@ namespace MiniMarket.presentacion
                     this.Estado_Botonesprocesos(false);
                     this.Txt_descripcion_pr.ReadOnly = true;
                     Txt_descripcion_pr.Text = "";
+                    Txt_stock_min.Text = "0";
+                    Txt_stock_max.Text = "0";
+                    Txt_descripcion_pr.ReadOnly = true;
+                    Txt_stock_max.ReadOnly = true;
+                    Txt_stock_min.ReadOnly = true;
                     Tbp_principal.SelectedIndex = 0;
                     this.Codigo_pr = 0;
+                    this.Gbx_detalle.Visible = false;
                 }
                 else
                 {
@@ -164,7 +275,11 @@ namespace MiniMarket.presentacion
             this.Estado_BotonesPrincipales(false);
             this.Estado_Botonesprocesos(true);
             Txt_descripcion_pr.Text = "";
+            Txt_stock_min.Text = "0";
+            Txt_stock_max.Text = "0";
             Txt_descripcion_pr.ReadOnly = false;
+            Txt_stock_max.ReadOnly = false;
+            Txt_stock_min.ReadOnly = false;
             Tbp_principal.SelectedIndex = 1;
             Txt_descripcion_pr.Focus();
         }
@@ -186,10 +301,15 @@ namespace MiniMarket.presentacion
             Estadoguarda = 0; //Sin ninguna accion
             this.Codigo_pr = 0;
             Txt_descripcion_pr.Text = "";
+            Txt_stock_min.Text = "0";
+            Txt_stock_max.Text = "0";
+            Txt_stock_max.ReadOnly = true;
+            Txt_stock_min.ReadOnly = true;
             Txt_descripcion_pr.ReadOnly = true;
             this.Estado_BotonesPrincipales(true);
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 0;
+            this.Gbx_detalle.Visible = false;
         }
 
         private void Dgv_principal_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -197,11 +317,14 @@ namespace MiniMarket.presentacion
             this.Selecciona_Item();
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 1;
+            this.Listado_stock_actual(this.Codigo_pr);
+            this.Gbx_detalle.Visible = true;
         }
 
         private void Btn_retornar_Click(object sender, EventArgs e)
         {
             this.Estado_Botonesprocesos(false);
+            this.Gbx_detalle.Visible = false;
             Tbp_principal.SelectedIndex = 0;
             Txt_descripcion_pr.Text = "";
             this.Codigo_pr = 0;
@@ -261,6 +384,60 @@ namespace MiniMarket.presentacion
         {
             this.Selecciona_Item_ma_pr();
             Pnl_listado_marcas.Visible = false;
+        }
+
+        private void Btn_lupa2_Click(object sender, EventArgs e)
+        {
+            this.Pnl_listado_um.Location = Btn_lupa1.Location;
+            this.Pnl_listado_um.Visible = true;
+        }
+
+        private void Btn_buscar1_Click(object sender, EventArgs e)
+        {
+            this.Listado_ma_pr(Txt_buscar1.Text);
+        }
+
+        private void Btn_buscar2_Click(object sender, EventArgs e)
+        {
+            this.Listado_um_pr(Txt_buscar2.Text);
+        }
+
+        private void Btn_retornar1_Click(object sender, EventArgs e)
+        {
+            Pnl_listado_marcas.Visible = false;
+        }
+
+        private void Btn_retornar2_Click(object sender, EventArgs e)
+        {
+            Pnl_listado_um.Visible = false;
+        }
+
+        private void Dgv_medidas_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_Item_um_pr();
+            Pnl_listado_um.Visible = false;
+        }
+
+        private void Btn_Lupa3_Click(object sender, EventArgs e)
+        {
+            this.Pnl_listado_ca.Location = Btn_lupa1.Location;
+            this.Pnl_listado_ca.Visible = true;
+        }
+
+        private void Dgv_categorias_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_Item_ca_pr();
+            Pnl_listado_ca.Visible = false;
+        }
+
+        private void Btn_buscar3_Click(object sender, EventArgs e)
+        {
+            this.Listado_ca_pr(Txt_buscar1.Text);
+        }
+
+        private void Btn_retornar3_Click(object sender, EventArgs e)
+        {
+            Pnl_listado_ca.Visible = false;
         }
     }
 }
