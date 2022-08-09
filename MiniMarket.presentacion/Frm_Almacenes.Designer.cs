@@ -207,6 +207,7 @@ namespace MiniMarket.presentacion
             // Txt_descripcion_al
             // 
             this.Txt_descripcion_al.Location = new System.Drawing.Point(105, 77);
+            this.Txt_descripcion_al.MaxLength = 50;
             this.Txt_descripcion_al.Name = "Txt_descripcion_al";
             this.Txt_descripcion_al.Size = new System.Drawing.Size(216, 20);
             this.Txt_descripcion_al.TabIndex = 1;

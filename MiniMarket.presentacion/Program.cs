@@ -16,7 +16,7 @@ namespace MiniMarket.presentacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Rubros());
+            Application.Run(new Frm_Provincias());
         }
     }
 }

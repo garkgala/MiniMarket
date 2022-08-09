@@ -366,3 +366,89 @@ as
 update TB_RUBROS set estado=0 where  codigo_ru = @nCodigo_ru; 
 
 GO
+
+ Create procedure Sp_Listado_de    
+@cTexto varchar(100)=''      
+as      
+ select codigo_de, descripcion_de       
+ from dbo.TB_DEPARTAMENTOS       
+ WHERE estado=1 and       
+ upper(trim(cast(codigo_de as char)) + trim(descripcion_de))       
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+CREATE PROCEDURE Sp_Guardar_de      
+@nOpcion int=0,      
+@nCodigo_de int =0,      
+@cDescripcion_de varchar(100)=''      
+as      
+if @nOpcion=1 --Nuevo registro      
+begin      
+ Insert into TB_DEPARTAMENTOS(descripcion_de, estado) values (@cDescripcion_de, 1);      
+end;      
+else --Actualizar registro      
+begin      
+ update TB_DEPARTAMENTOS set descripcion_de = @cDescripcion_de where codigo_de=@nCodigo_de;      
+end; 
+
+GO
+
+create procedure SP_ELIMINAR_DE      
+@nCodigo_de int=0      
+as      
+update TB_DEPARTAMENTOS set estado=0 where  codigo_de = @nCodigo_de; 
+
+GO
+
+ Create procedure Sp_Listado_po      
+@cTexto varchar(100)=''        
+as        
+ select a.codigo_po, 
+		a.descripcion_po,
+		b.descripcion_de,
+		a.codigo_de
+ from dbo.TB_PROVINCIAS a
+ INNER JOIN TB_DEPARTAMENTOS b on a.codigo_de = b.codigo_de
+ WHERE a.estado=1 and         
+ upper(trim(cast(a.codigo_po as char)) + 
+	   trim(a.descripcion_po) +
+	   trim(b.descripcion_de))
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+ALTER PROCEDURE Sp_Guardar_po        
+@nOpcion int=0,        
+@nCodigo_po int =0,        
+@cDescripcion_po varchar(100)=''  ,
+@nCodigo_de int=0
+as        
+if @nOpcion=1 --Nuevo registro        
+begin        
+ Insert into TB_PROVINCIAS(descripcion_po,codigo_de, estado) values (@cDescripcion_po,@nCodigo_de, 1);        
+end;        
+else --Actualizar registro        
+begin        
+ update TB_PROVINCIAS set descripcion_po = @cDescripcion_po, 
+						  codigo_de = @nCodigo_de 
+					  where codigo_po=@nCodigo_po;        
+end; 
+
+GO
+
+create procedure SP_ELIMINAR_PO        
+@nCodigo_po int=0        
+as        
+update TB_PROVINCIAS set estado=0 where  codigo_po = @nCodigo_po; 
+
+GO
+
+ Create procedure Sp_Listado_de_po      
+@cTexto varchar(100)=''        
+as        
+ select descripcion_de, codigo_de       
+ from dbo.TB_DEPARTAMENTOS         
+ WHERE estado=1 and         
+ upper(trim(cast(codigo_de as char)) + trim(descripcion_de))         
+ like '%' + upper(trim(@cTexto)) + '%'; 

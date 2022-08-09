@@ -47,12 +47,12 @@ namespace MiniMarket.presentacion
             this.Txt_descripcion_ca = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Btn_nuevo = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Btn_actualizar = new System.Windows.Forms.Button();
             this.Btn_eliminar = new System.Windows.Forms.Button();
             this.Btn_reporte = new System.Windows.Forms.Button();
             this.Btn_salir = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Tbp_principal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
@@ -208,6 +208,7 @@ namespace MiniMarket.presentacion
             // Txt_descripcion_ca
             // 
             this.Txt_descripcion_ca.Location = new System.Drawing.Point(105, 77);
+            this.Txt_descripcion_ca.MaxLength = 40;
             this.Txt_descripcion_ca.Name = "Txt_descripcion_ca";
             this.Txt_descripcion_ca.Size = new System.Drawing.Size(216, 20);
             this.Txt_descripcion_ca.TabIndex = 1;
@@ -235,6 +236,16 @@ namespace MiniMarket.presentacion
             this.Btn_nuevo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Btn_nuevo.UseVisualStyleBackColor = false;
             this.Btn_nuevo.Click += new System.EventHandler(this.Btn_nuevo_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "New_Logo.png");
+            this.imageList1.Images.SetKeyName(1, "Actualizar.png");
+            this.imageList1.Images.SetKeyName(2, "Eliminar.png");
+            this.imageList1.Images.SetKeyName(3, "Reporte.png");
+            this.imageList1.Images.SetKeyName(4, "Salir.png");
             // 
             // Btn_actualizar
             // 
@@ -303,16 +314,6 @@ namespace MiniMarket.presentacion
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(396, 246);
             this.reportViewer1.TabIndex = 2;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "New_Logo.png");
-            this.imageList1.Images.SetKeyName(1, "Actualizar.png");
-            this.imageList1.Images.SetKeyName(2, "Eliminar.png");
-            this.imageList1.Images.SetKeyName(3, "Reporte.png");
-            this.imageList1.Images.SetKeyName(4, "Salir.png");
             // 
             // Frm_Categorias
             // 

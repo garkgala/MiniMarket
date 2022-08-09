@@ -64,6 +64,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_Provincias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Provincias.Designer.cs">
+      <DependentUpon>Frm_Provincias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Departamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Departamentos.Designer.cs">
+      <DependentUpon>Frm_Departamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Rubros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +131,23 @@
     <Compile Include="Reportes\Frm_Rpt_Categorias.Designer.cs">
       <DependentUpon>Frm_Rpt_Categorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Departamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Departamentos.Designer.cs">
+      <DependentUpon>Frm_Rpt_Departamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Frm_Rpt_Marcas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Frm_Rpt_Marcas.Designer.cs">
       <DependentUpon>Frm_Rpt_Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Provincias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Provincias.Designer.cs">
+      <DependentUpon>Frm_Rpt_Provincias.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Frm_Rpt_Rubros.cs">
       <SubType>Form</SubType>
@@ -138,6 +162,12 @@
       <DependentUpon>Frm_Rpt_Unidades_Medidas.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Frm_Provincias.resx">
+      <DependentUpon>Frm_Provincias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Departamentos.resx">
+      <DependentUpon>Frm_Departamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Rubros.resx">
       <DependentUpon>Frm_Rubros.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,8 +201,14 @@
     <EmbeddedResource Include="Reportes\Frm_Rpt_Categorias.resx">
       <DependentUpon>Frm_Rpt_Categorias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Departamentos.resx">
+      <DependentUpon>Frm_Rpt_Departamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Rpt_Marcas.resx">
       <DependentUpon>Frm_Rpt_Marcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Provincias.resx">
+      <DependentUpon>Frm_Rpt_Provincias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Rpt_Rubros.resx">
       <DependentUpon>Frm_Rpt_Rubros.cs</DependentUpon>
@@ -180,6 +216,8 @@
     <EmbeddedResource Include="Reportes\Frm_Rpt_Unidades_Medidas.resx">
       <DependentUpon>Frm_Rpt_Unidades_Medidas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Rpt_Departamentos.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Provincias.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Rubros.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Almacenes.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Marcas.rdlc" />
