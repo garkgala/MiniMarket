@@ -450,5 +450,65 @@ as
  select descripcion_de, codigo_de       
  from dbo.TB_DEPARTAMENTOS         
  WHERE estado=1 and         
- upper(trim(cast(codigo_de as char)) + trim(descripcion_de))         
+ upper(trim(descripcion_de))         
  like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+ Create procedure Sp_Listado_di        
+@cTexto varchar(100)=''          
+as          
+ select a.codigo_di,   
+  a.descripcion_di,  
+  b.descripcion_po,  
+  c.descripcion_de,
+  b.codigo_po
+ from dbo.TB_DISTRITOS a  
+ INNER JOIN TB_PROVINCIAS b on b.codigo_po = a.codigo_po 
+ INNER JOIN TB_DEPARTAMENTOS c on c.codigo_de = b.codigo_de
+ WHERE a.estado=1 and           
+ upper(trim(cast(a.codigo_di as char)) +   
+    trim(a.descripcion_di) +  
+    trim(b.descripcion_po) +  
+    trim(c.descripcion_de)) 
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+ CREATE PROCEDURE Sp_Guardar_di          
+@nOpcion int=0,          
+@nCodigo_di int =0,          
+@cDescripcion_di varchar(100)='',  
+@nCodigo_po int=0  
+as          
+if @nOpcion=1 --Nuevo registro          
+begin          
+ Insert into TB_DISTRITOS(descripcion_di,codigo_po, estado) values (@cDescripcion_di,@nCodigo_po, 1);          
+end;          
+else --Actualizar registro          
+begin          
+ update TB_DISTRITOS set descripcion_di = @cDescripcion_di,   
+        codigo_po = @nCodigo_po  
+       where codigo_di=@nCodigo_di;          
+end; 
+
+GO
+
+create procedure SP_ELIMINAR_DI         
+@nCodigo_di int=0          
+as          
+update TB_DISTRITOS set estado=0 where  codigo_di = @nCodigo_di; 
+
+GO
+
+ Create procedure Sp_Listado_po_di        
+@cTexto varchar(100)=''          
+as          
+ select descripcion_po, codigo_po         
+ from dbo.TB_PROVINCIAS           
+ WHERE estado=1 and           
+ upper(trim(descripcion_po))           
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
