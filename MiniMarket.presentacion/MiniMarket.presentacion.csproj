@@ -70,6 +70,12 @@
     <Compile Include="Frm_Distritos.Designer.cs">
       <DependentUpon>Frm_Distritos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Proveedores.Designer.cs">
+      <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Provincias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,12 @@
     <Compile Include="Reportes\Frm_Rpt_Departamentos.Designer.cs">
       <DependentUpon>Frm_Rpt_Departamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Distritos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_Rpt_Distritos.Designer.cs">
+      <DependentUpon>Frm_Rpt_Distritos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Frm_Rpt_Marcas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +182,9 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Frm_Distritos.resx">
       <DependentUpon>Frm_Distritos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Proveedores.resx">
+      <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Provincias.resx">
       <DependentUpon>Frm_Provincias.cs</DependentUpon>
@@ -213,6 +228,9 @@
     <EmbeddedResource Include="Reportes\Frm_Rpt_Departamentos.resx">
       <DependentUpon>Frm_Rpt_Departamentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_Rpt_Distritos.resx">
+      <DependentUpon>Frm_Rpt_Distritos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Rpt_Marcas.resx">
       <DependentUpon>Frm_Rpt_Marcas.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,6 +244,7 @@
       <DependentUpon>Frm_Rpt_Unidades_Medidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Departamentos.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Distritos.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Provincias.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Rubros.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Almacenes.rdlc" />

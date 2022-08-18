@@ -81,9 +81,11 @@ namespace MiniMarket.presentacion
 
         private void Formato_po_di()
         {   
-            Dgv_provincias.Columns[0].Width = 300;
+            Dgv_provincias.Columns[0].Width = 150;
             Dgv_provincias.Columns[0].HeaderText = "PROVINCIA";
-            Dgv_provincias.Columns[1].Visible = false;
+            Dgv_provincias.Columns[1].Width = 150;
+            Dgv_provincias.Columns[1].HeaderText = "DEPARTAMENTO";
+            Dgv_provincias.Columns[2].Visible = false;
         }
 
         private void Listado_po_di(string cTexto)
@@ -242,9 +244,9 @@ namespace MiniMarket.presentacion
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
-            //Reportes.Frm_Rpt_Provincias oRpt7 = new Reportes.Frm_Rpt_Provincias();
-            //oRpt7.txt_p1.Text = Txt_buscar.Text;
-            //oRpt7.ShowDialog();
+            Reportes.Frm_Rpt_Distritos oRpt8 = new Reportes.Frm_Rpt_Distritos();
+            oRpt8.txt_p1.Text = Txt_buscar.Text;
+            oRpt8.ShowDialog();
         }
 
         private void Btn_salir_Click(object sender, EventArgs e)

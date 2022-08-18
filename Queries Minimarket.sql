@@ -504,11 +504,160 @@ GO
  Create procedure Sp_Listado_po_di        
 @cTexto varchar(100)=''          
 as          
- select descripcion_po, codigo_po         
- from dbo.TB_PROVINCIAS           
- WHERE estado=1 and           
+ select a.descripcion_po, b.descripcion_de, a.codigo_po         
+ from dbo.TB_PROVINCIAS a 
+ INNER JOIN dbo.TB_DEPARTAMENTOS b on b.codigo_de = a.codigo_de
+ WHERE a.estado=1 and           
  upper(trim(descripcion_po))           
  like '%' + upper(trim(@cTexto)) + '%'; 
 
  GO
 
+ CREATE procedure [dbo].[Sp_Listado_pv]  
+@cTexto varchar(150)=''    
+as    
+
+SELECT  a.codigo_pv,
+		b.descripcion_tdpc,
+		a.nrodocumento_pv,
+		a.razon_social_pv,
+		a.nombres,
+		a.apellidos,
+		c.descripcion_ru,
+		a.email_pv,
+		a.telefono_pv,
+		a.movil_pv,
+		a.codigo_sx,
+		d.descripcion_sx,
+		a.direccion_pv,
+		a.codigo_di,
+		e.descripcion_di,
+		f.descripcion_po,
+		g.descripcion_de,
+		a.observacion_pv
+FROM		TB_PROVEEDORES				a
+INNER JOIN	TB_TIPOS_DOCUMENTOS_PV_CL	b on a.codigo_tdpc = b.codigo_tdpc
+INNER JOIN	TB_RUBROS					c on c.codigo_ru = a.codigo_ru
+INNER JOIN	TB_SEXOS					d on d.codigo_sx = a.codigo_sx
+INNER JOIN	TB_DISTRITOS				e on e.codigo_di = a.codigo_di
+INNER JOIN	TB_PROVINCIAS				f on f.codigo_po = e.codigo_po
+INNER JOIN	TB_DEPARTAMENTOS			g on g.codigo_de = f.codigo_de
+WHERE	upper(trim(cast(a.codigo_pv as char)) +
+		trim(b.descripcion_tdpc) +
+		trim(a.nrodocumento_pv) +
+		trim(a.razon_social_pv) +
+		trim(a.nombres) +
+		trim(a.apellidos) +
+		trim(c.descripcion_ru) +
+		trim(a.email_pv) +
+		trim(a.telefono_pv) +
+		trim(a.movil_pv))
+LIKE '%' + upper(trim(@cTexto)) + '%'
+GO
+
+ CREATE PROCEDURE Sp_Guardar_pv      
+@nOpcion int=0,      
+@nCodigo_pv int =0,
+@nCodigo_tdpc int = 0,
+@cNrodocumento_pv varchar(20)='',
+@cRazon_social_pv varchar(150)='',
+@cNombres varchar(100) = '',
+@capellidos varchar(100) = '',
+@nCodigo_sx int=0,
+@nCodigo_ru int=0,
+@cEmail_pv varchar(150)='',
+@cTelefono_pv varchar(20)='',
+@cMovil_pv varchar(20)='',
+@cDireccion_pv text='',
+@nCodigo_di int=0,
+@cObservacion_pv text=''
+as      
+declare @xCodigo int = 0  
+declare @fFecha as datetime  
+set @fFecha = convert(datetime, GETDATE())  
+if @nOpcion=1 --Nuevo registro      
+begin      
+	INSERT INTO TB_PROVEEDORES (	codigo_tdpc,
+									nrodocumento_pv,
+									razon_social_pv,
+									nombres,
+									apellidos,
+									codigo_sx,
+									codigo_ru,
+									email_pv,
+									telefono_pv,
+									movil_pv,
+									direccion_pv,
+									codigo_di,
+									observacion_pv,
+									fecha_crea,
+									fecha_modifica,
+									estado)
+	VALUES						(	@nCodigo_tdpc,
+									@cNrodocumento_pv,
+									@cRazon_social_pv,
+									@cNombres,
+									@capellidos,
+									@nCodigo_sx,
+									@nCodigo_ru,
+									@cEmail_pv,
+									@cTelefono_pv,
+									@cMovil_pv,
+									@cDireccion_pv,
+									@nCodigo_di,
+									@cObservacion_pv,
+									@fFecha,
+									@fFecha,
+									1);
+end;      
+else --Actualizar registro      
+begin      
+	UPDATE TB_PROVEEDORES SET		codigo_tdpc=@nCodigo_tdpc,
+									nrodocumento_pv=@cNrodocumento_pv,
+									razon_social_pv=@cRazon_social_pv,
+									nombres=@cNombres,
+									apellidos=@capellidos,
+									codigo_sx=@nCodigo_sx,
+									codigo_ru=@nCodigo_ru,
+									email_pv=@cEmail_pv,
+									telefono_pv=@cTelefono_pv,
+									movil_pv=@cMovil_pv,
+									direccion_pv=@cDireccion_pv,
+									codigo_di=@nCodigo_di,
+									observacion_pv=@cObservacion_pv,
+									fecha_modifica=@fFecha
+							WHERE codigo_pv = @nCodigo_pv
+end;   
+
+GO
+
+create procedure SP_ELIMINAR_PV      
+@nCodigo_pv int=0      
+as      
+update TB_PROVEEDORES set estado=0 where  codigo_pv = @nCodigo_pv; 
+
+GO
+
+ CREATE procedure Sp_Listado_tdpc     
+as      
+ select  descripcion_tdpc, codigo_tdpc       
+ from dbo.TB_TIPOS_DOCUMENTOS_PV_CL       
+ WHERE estado=1
+GO
+
+Create procedure Sp_Listado_sx 
+as      
+ select  descripcion_sx, codigo_sx       
+ from dbo.TB_SEXOS       
+ WHERE estado=1
+
+ GO
+
+Create procedure Sp_Listado_ca_pr    
+@cTexto varchar(20)=''        
+as        
+ select  descripcion_ca, codigo_ca        
+ from dbo.TB_CATEGORIAS      
+ WHERE estado=1 and         
+ upper(trim(descripcion_ca))         
+ like '%' + upper(trim(@cTexto)) + '%'; 

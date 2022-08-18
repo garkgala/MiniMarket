@@ -42,6 +42,7 @@ namespace MiniMarket.presentacion
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Btn_retornar = new System.Windows.Forms.Button();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.Btn_guardar = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.Txt_descripcion_ma = new System.Windows.Forms.TextBox();
@@ -124,11 +125,14 @@ namespace MiniMarket.presentacion
             this.Btn_buscar.BackColor = System.Drawing.Color.DarkTurquoise;
             this.Btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_buscar.ForeColor = System.Drawing.Color.White;
+            this.Btn_buscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_buscar.ImageKey = "Lupa.png";
+            this.Btn_buscar.ImageList = this.imageList2;
             this.Btn_buscar.Location = new System.Drawing.Point(269, 14);
             this.Btn_buscar.Name = "Btn_buscar";
             this.Btn_buscar.Size = new System.Drawing.Size(75, 23);
             this.Btn_buscar.TabIndex = 6;
-            this.Btn_buscar.Text = "Buscar";
+            this.Btn_buscar.Text = "   Buscar";
             this.Btn_buscar.UseVisualStyleBackColor = false;
             this.Btn_buscar.Click += new System.EventHandler(this.Btn_buscar_Click);
             // 
@@ -168,24 +172,39 @@ namespace MiniMarket.presentacion
             this.Btn_retornar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
             this.Btn_retornar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_retornar.ForeColor = System.Drawing.Color.White;
+            this.Btn_retornar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_retornar.ImageKey = "Retornar.png";
+            this.Btn_retornar.ImageList = this.imageList2;
             this.Btn_retornar.Location = new System.Drawing.Point(327, 127);
             this.Btn_retornar.Name = "Btn_retornar";
             this.Btn_retornar.Size = new System.Drawing.Size(75, 23);
             this.Btn_retornar.TabIndex = 3;
-            this.Btn_retornar.Text = "Retornar";
+            this.Btn_retornar.Text = "     Retornar";
             this.Btn_retornar.UseVisualStyleBackColor = false;
             this.Btn_retornar.Click += new System.EventHandler(this.Btn_retornar_Click);
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "Lupa.png");
+            this.imageList2.Images.SetKeyName(1, "Retornar.png");
+            this.imageList2.Images.SetKeyName(2, "Guardar.png");
+            this.imageList2.Images.SetKeyName(3, "Cancelar.png");
             // 
             // Btn_guardar
             // 
             this.Btn_guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.Btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_guardar.ForeColor = System.Drawing.Color.White;
+            this.Btn_guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_guardar.ImageKey = "Guardar.png";
+            this.Btn_guardar.ImageList = this.imageList2;
             this.Btn_guardar.Location = new System.Drawing.Point(222, 127);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(75, 23);
             this.Btn_guardar.TabIndex = 2;
-            this.Btn_guardar.Text = "Guardar";
+            this.Btn_guardar.Text = "     Guardar";
             this.Btn_guardar.UseVisualStyleBackColor = false;
             this.Btn_guardar.Visible = false;
             this.Btn_guardar.Click += new System.EventHandler(this.Btn_guardar_Click);
@@ -195,11 +214,14 @@ namespace MiniMarket.presentacion
             this.Btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.Btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Btn_cancelar.ForeColor = System.Drawing.Color.White;
+            this.Btn_cancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_cancelar.ImageKey = "Cancelar.png";
+            this.Btn_cancelar.ImageList = this.imageList2;
             this.Btn_cancelar.Location = new System.Drawing.Point(122, 127);
             this.Btn_cancelar.Name = "Btn_cancelar";
             this.Btn_cancelar.Size = new System.Drawing.Size(75, 23);
             this.Btn_cancelar.TabIndex = 2;
-            this.Btn_cancelar.Text = "Cancelar";
+            this.Btn_cancelar.Text = "     Cancelar";
             this.Btn_cancelar.UseVisualStyleBackColor = false;
             this.Btn_cancelar.Visible = false;
             this.Btn_cancelar.Click += new System.EventHandler(this.Btn_cancelar_Click);
@@ -351,5 +373,6 @@ namespace MiniMarket.presentacion
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Btn_retornar;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ImageList imageList2;
     }
 }

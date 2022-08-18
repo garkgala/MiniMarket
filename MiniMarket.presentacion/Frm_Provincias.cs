@@ -179,7 +179,7 @@ namespace MiniMarket.presentacion
         private void Btn_cancelar_Click(object sender, EventArgs e)
         {
             Estadoguarda = 0; //Sin ninguna accion
-            this.Codigo_de = 0;
+            this.Codigo_po = 0;
             Txt_descripcion_po.Text = "";
             Txt_descripcion_po.ReadOnly = true;
             Txt_descripcion_de.Text = "";
@@ -201,7 +201,7 @@ namespace MiniMarket.presentacion
             this.Estado_Botonesprocesos(false);
             Tbp_principal.SelectedIndex = 0;
             Txt_descripcion_po.Text = "";
-            this.Codigo_de = 0;
+            this.Codigo_po = 0;
         }
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
