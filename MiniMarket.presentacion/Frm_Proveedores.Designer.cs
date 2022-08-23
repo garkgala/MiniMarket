@@ -43,6 +43,9 @@ namespace MiniMarket.presentacion
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Tbp_principal = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Dgv_principal = new System.Windows.Forms.DataGridView();
@@ -51,9 +54,31 @@ namespace MiniMarket.presentacion
             this.Txt_buscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Pnl_listado_ru = new System.Windows.Forms.Panel();
+            this.Btn_retornar3 = new System.Windows.Forms.Button();
+            this.Btn_buscar3 = new System.Windows.Forms.Button();
+            this.Txt_buscar3 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Dgv_rubros = new System.Windows.Forms.DataGridView();
+            this.Pnl_listado_di = new System.Windows.Forms.Panel();
+            this.Btn_retornar4 = new System.Windows.Forms.Button();
+            this.Btn_buscar4 = new System.Windows.Forms.Button();
+            this.Txt_buscar4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Dgv_distritos = new System.Windows.Forms.DataGridView();
+            this.Pnl_listado_sx = new System.Windows.Forms.Panel();
+            this.Btn_retornar2 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Dgv_sexos = new System.Windows.Forms.DataGridView();
+            this.Pnl_listado_tdpc = new System.Windows.Forms.Panel();
+            this.Btn_retornar1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Dgv_tdpc = new System.Windows.Forms.DataGridView();
             this.Txt_observacion_pv = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Btn_lupa4 = new System.Windows.Forms.Button();
             this.Txt_distrito = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.Txt_direccion_pv = new System.Windows.Forms.TextBox();
@@ -68,27 +93,6 @@ namespace MiniMarket.presentacion
             this.label16 = new System.Windows.Forms.Label();
             this.Txt_nombres = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.Pnl_listado_ca = new System.Windows.Forms.Panel();
-            this.Btn_retornar3 = new System.Windows.Forms.Button();
-            this.Btn_buscar3 = new System.Windows.Forms.Button();
-            this.Txt_buscar3 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.Dgv_categorias = new System.Windows.Forms.DataGridView();
-            this.Pnl_listado_marcas = new System.Windows.Forms.Panel();
-            this.Btn_retornar1 = new System.Windows.Forms.Button();
-            this.Btn_buscar1 = new System.Windows.Forms.Button();
-            this.Txt_buscar1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Dgv_marcas = new System.Windows.Forms.DataGridView();
-            this.Pnl_listado_um = new System.Windows.Forms.Panel();
-            this.Btn_retornar2 = new System.Windows.Forms.Button();
-            this.Btn_buscar2 = new System.Windows.Forms.Button();
-            this.Txt_buscar2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.Dgv_medidas = new System.Windows.Forms.DataGridView();
             this.Btn_Lupa3 = new System.Windows.Forms.Button();
             this.Txt_descripcion_ru = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -115,12 +119,14 @@ namespace MiniMarket.presentacion
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).BeginInit();
             this.tabPage2.SuspendLayout();
-            this.Pnl_listado_ca.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_categorias)).BeginInit();
-            this.Pnl_listado_marcas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_marcas)).BeginInit();
-            this.Pnl_listado_um.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_medidas)).BeginInit();
+            this.Pnl_listado_ru.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_rubros)).BeginInit();
+            this.Pnl_listado_di.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_distritos)).BeginInit();
+            this.Pnl_listado_sx.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_sexos)).BeginInit();
+            this.Pnl_listado_tdpc.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_tdpc)).BeginInit();
             this.SuspendLayout();
             // 
             // Tbp_principal
@@ -228,9 +234,13 @@ namespace MiniMarket.presentacion
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.Pnl_listado_ru);
+            this.tabPage2.Controls.Add(this.Pnl_listado_di);
+            this.tabPage2.Controls.Add(this.Pnl_listado_sx);
+            this.tabPage2.Controls.Add(this.Pnl_listado_tdpc);
             this.tabPage2.Controls.Add(this.Txt_observacion_pv);
             this.tabPage2.Controls.Add(this.label22);
-            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.Btn_lupa4);
             this.tabPage2.Controls.Add(this.Txt_distrito);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Controls.Add(this.Txt_direccion_pv);
@@ -245,9 +255,6 @@ namespace MiniMarket.presentacion
             this.tabPage2.Controls.Add(this.label16);
             this.tabPage2.Controls.Add(this.Txt_nombres);
             this.tabPage2.Controls.Add(this.label15);
-            this.tabPage2.Controls.Add(this.Pnl_listado_ca);
-            this.tabPage2.Controls.Add(this.Pnl_listado_marcas);
-            this.tabPage2.Controls.Add(this.Pnl_listado_um);
             this.tabPage2.Controls.Add(this.Btn_Lupa3);
             this.tabPage2.Controls.Add(this.Txt_descripcion_ru);
             this.tabPage2.Controls.Add(this.label5);
@@ -271,168 +278,20 @@ namespace MiniMarket.presentacion
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mantenimiento";
             // 
-            // Txt_observacion_pv
+            // Pnl_listado_ru
             // 
-            this.Txt_observacion_pv.Location = new System.Drawing.Point(567, 235);
-            this.Txt_observacion_pv.MaxLength = 100;
-            this.Txt_observacion_pv.Multiline = true;
-            this.Txt_observacion_pv.Name = "Txt_observacion_pv";
-            this.Txt_observacion_pv.Size = new System.Drawing.Size(316, 55);
-            this.Txt_observacion_pv.TabIndex = 42;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(564, 219);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(70, 13);
-            this.label22.TabIndex = 41;
-            this.label22.Text = "Observación:";
-            // 
-            // button1
-            // 
-            this.button1.ImageKey = "Lupa.png";
-            this.button1.ImageList = this.imageList2;
-            this.button1.Location = new System.Drawing.Point(889, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(26, 23);
-            this.button1.TabIndex = 40;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // Txt_distrito
-            // 
-            this.Txt_distrito.Enabled = false;
-            this.Txt_distrito.Location = new System.Drawing.Point(567, 114);
-            this.Txt_distrito.Name = "Txt_distrito";
-            this.Txt_distrito.Size = new System.Drawing.Size(316, 20);
-            this.Txt_distrito.TabIndex = 39;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(564, 98);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(188, 13);
-            this.label21.TabIndex = 38;
-            this.label21.Text = "Distrito / Provincia / Departamento (*):";
-            // 
-            // Txt_direccion_pv
-            // 
-            this.Txt_direccion_pv.Location = new System.Drawing.Point(567, 157);
-            this.Txt_direccion_pv.MaxLength = 100;
-            this.Txt_direccion_pv.Multiline = true;
-            this.Txt_direccion_pv.Name = "Txt_direccion_pv";
-            this.Txt_direccion_pv.Size = new System.Drawing.Size(316, 55);
-            this.Txt_direccion_pv.TabIndex = 37;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(564, 141);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(55, 13);
-            this.label20.TabIndex = 36;
-            this.label20.Text = "Dirección:";
-            // 
-            // Txt_movil_pv
-            // 
-            this.Txt_movil_pv.Location = new System.Drawing.Point(728, 71);
-            this.Txt_movil_pv.MaxLength = 100;
-            this.Txt_movil_pv.Name = "Txt_movil_pv";
-            this.Txt_movil_pv.Size = new System.Drawing.Size(155, 20);
-            this.Txt_movil_pv.TabIndex = 35;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(725, 55);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(96, 13);
-            this.label18.TabIndex = 34;
-            this.label18.Text = "# Telefono - Movil:";
-            // 
-            // Txt_telefono_pv
-            // 
-            this.Txt_telefono_pv.Location = new System.Drawing.Point(567, 71);
-            this.Txt_telefono_pv.MaxLength = 100;
-            this.Txt_telefono_pv.Name = "Txt_telefono_pv";
-            this.Txt_telefono_pv.Size = new System.Drawing.Size(155, 20);
-            this.Txt_telefono_pv.TabIndex = 33;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(564, 55);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(84, 13);
-            this.label19.TabIndex = 32;
-            this.label19.Text = "# Telefono -Fijo:";
-            // 
-            // Txt_email_pv
-            // 
-            this.Txt_email_pv.Location = new System.Drawing.Point(567, 26);
-            this.Txt_email_pv.MaxLength = 100;
-            this.Txt_email_pv.Name = "Txt_email_pv";
-            this.Txt_email_pv.Size = new System.Drawing.Size(277, 20);
-            this.Txt_email_pv.TabIndex = 31;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(564, 10);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(35, 13);
-            this.label17.TabIndex = 30;
-            this.label17.Text = "Email:";
-            // 
-            // Txt_apellidos
-            // 
-            this.Txt_apellidos.Location = new System.Drawing.Point(259, 117);
-            this.Txt_apellidos.MaxLength = 100;
-            this.Txt_apellidos.Name = "Txt_apellidos";
-            this.Txt_apellidos.Size = new System.Drawing.Size(155, 20);
-            this.Txt_apellidos.TabIndex = 29;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(256, 101);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(65, 13);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Apellidos (*):";
-            // 
-            // Txt_nombres
-            // 
-            this.Txt_nombres.Location = new System.Drawing.Point(98, 117);
-            this.Txt_nombres.MaxLength = 100;
-            this.Txt_nombres.Name = "Txt_nombres";
-            this.Txt_nombres.Size = new System.Drawing.Size(155, 20);
-            this.Txt_nombres.TabIndex = 27;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(95, 101);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(65, 13);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "Nombres (*):";
-            // 
-            // Pnl_listado_ca
-            // 
-            this.Pnl_listado_ca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
-            this.Pnl_listado_ca.Controls.Add(this.Btn_retornar3);
-            this.Pnl_listado_ca.Controls.Add(this.Btn_buscar3);
-            this.Pnl_listado_ca.Controls.Add(this.Txt_buscar3);
-            this.Pnl_listado_ca.Controls.Add(this.label12);
-            this.Pnl_listado_ca.Controls.Add(this.label13);
-            this.Pnl_listado_ca.Controls.Add(this.Dgv_categorias);
-            this.Pnl_listado_ca.Location = new System.Drawing.Point(685, 316);
-            this.Pnl_listado_ca.Name = "Pnl_listado_ca";
-            this.Pnl_listado_ca.Size = new System.Drawing.Size(291, 214);
-            this.Pnl_listado_ca.TabIndex = 25;
-            this.Pnl_listado_ca.Visible = false;
+            this.Pnl_listado_ru.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Pnl_listado_ru.Controls.Add(this.Btn_retornar3);
+            this.Pnl_listado_ru.Controls.Add(this.Btn_buscar3);
+            this.Pnl_listado_ru.Controls.Add(this.Txt_buscar3);
+            this.Pnl_listado_ru.Controls.Add(this.label12);
+            this.Pnl_listado_ru.Controls.Add(this.label13);
+            this.Pnl_listado_ru.Controls.Add(this.Dgv_rubros);
+            this.Pnl_listado_ru.Location = new System.Drawing.Point(328, 169);
+            this.Pnl_listado_ru.Name = "Pnl_listado_ru";
+            this.Pnl_listado_ru.Size = new System.Drawing.Size(291, 214);
+            this.Pnl_listado_ru.TabIndex = 25;
+            this.Pnl_listado_ru.Visible = false;
             // 
             // Btn_retornar3
             // 
@@ -478,18 +337,18 @@ namespace MiniMarket.presentacion
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(9, 10);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(198, 16);
+            this.label13.Size = new System.Drawing.Size(165, 16);
             this.label13.TabIndex = 20;
-            this.label13.Text = "LISTADO DE CATEGORIAS";
+            this.label13.Text = "LISTADO DE RUBROS";
             // 
-            // Dgv_categorias
+            // Dgv_rubros
             // 
-            this.Dgv_categorias.AllowUserToAddRows = false;
-            this.Dgv_categorias.AllowUserToDeleteRows = false;
+            this.Dgv_rubros.AllowUserToAddRows = false;
+            this.Dgv_rubros.AllowUserToDeleteRows = false;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(252)))), ((int)(((byte)(191)))));
-            this.Dgv_categorias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.Dgv_categorias.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.Dgv_categorias.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.Dgv_rubros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.Dgv_rubros.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.Dgv_rubros.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightGreen;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -497,14 +356,14 @@ namespace MiniMarket.presentacion
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_categorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.Dgv_categorias.ColumnHeadersHeight = 35;
-            this.Dgv_categorias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_categorias.EnableHeadersVisualStyles = false;
-            this.Dgv_categorias.Location = new System.Drawing.Point(12, 76);
-            this.Dgv_categorias.MultiSelect = false;
-            this.Dgv_categorias.Name = "Dgv_categorias";
-            this.Dgv_categorias.ReadOnly = true;
+            this.Dgv_rubros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.Dgv_rubros.ColumnHeadersHeight = 35;
+            this.Dgv_rubros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_rubros.EnableHeadersVisualStyles = false;
+            this.Dgv_rubros.Location = new System.Drawing.Point(12, 76);
+            this.Dgv_rubros.MultiSelect = false;
+            this.Dgv_rubros.Name = "Dgv_rubros";
+            this.Dgv_rubros.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -512,85 +371,84 @@ namespace MiniMarket.presentacion
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_categorias.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.Dgv_categorias.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Dgv_categorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.Dgv_categorias.Size = new System.Drawing.Size(268, 130);
-            this.Dgv_categorias.TabIndex = 19;
-            this.Dgv_categorias.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_categorias_CellContentDoubleClick);
+            this.Dgv_rubros.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.Dgv_rubros.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_rubros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.Dgv_rubros.Size = new System.Drawing.Size(268, 130);
+            this.Dgv_rubros.TabIndex = 19;
+            this.Dgv_rubros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_rubros_CellDoubleClick);
             // 
-            // Pnl_listado_marcas
+            // Pnl_listado_di
             // 
-            this.Pnl_listado_marcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
-            this.Pnl_listado_marcas.Controls.Add(this.Btn_retornar1);
-            this.Pnl_listado_marcas.Controls.Add(this.Btn_buscar1);
-            this.Pnl_listado_marcas.Controls.Add(this.Txt_buscar1);
-            this.Pnl_listado_marcas.Controls.Add(this.label9);
-            this.Pnl_listado_marcas.Controls.Add(this.label8);
-            this.Pnl_listado_marcas.Controls.Add(this.Dgv_marcas);
-            this.Pnl_listado_marcas.Location = new System.Drawing.Point(283, 324);
-            this.Pnl_listado_marcas.Name = "Pnl_listado_marcas";
-            this.Pnl_listado_marcas.Size = new System.Drawing.Size(291, 214);
-            this.Pnl_listado_marcas.TabIndex = 17;
-            this.Pnl_listado_marcas.Visible = false;
+            this.Pnl_listado_di.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Pnl_listado_di.Controls.Add(this.Btn_retornar4);
+            this.Pnl_listado_di.Controls.Add(this.Btn_buscar4);
+            this.Pnl_listado_di.Controls.Add(this.Txt_buscar4);
+            this.Pnl_listado_di.Controls.Add(this.label6);
+            this.Pnl_listado_di.Controls.Add(this.label7);
+            this.Pnl_listado_di.Controls.Add(this.Dgv_distritos);
+            this.Pnl_listado_di.Location = new System.Drawing.Point(508, 157);
+            this.Pnl_listado_di.Name = "Pnl_listado_di";
+            this.Pnl_listado_di.Size = new System.Drawing.Size(534, 214);
+            this.Pnl_listado_di.TabIndex = 26;
+            this.Pnl_listado_di.Visible = false;
             // 
-            // Btn_retornar1
+            // Btn_retornar4
             // 
-            this.Btn_retornar1.ImageKey = "Retornar.png";
-            this.Btn_retornar1.ImageList = this.imageList2;
-            this.Btn_retornar1.Location = new System.Drawing.Point(245, 36);
-            this.Btn_retornar1.Name = "Btn_retornar1";
-            this.Btn_retornar1.Size = new System.Drawing.Size(35, 23);
-            this.Btn_retornar1.TabIndex = 24;
-            this.Btn_retornar1.UseVisualStyleBackColor = true;
-            this.Btn_retornar1.Click += new System.EventHandler(this.Btn_retornar1_Click);
+            this.Btn_retornar4.ImageKey = "Retornar.png";
+            this.Btn_retornar4.ImageList = this.imageList2;
+            this.Btn_retornar4.Location = new System.Drawing.Point(245, 36);
+            this.Btn_retornar4.Name = "Btn_retornar4";
+            this.Btn_retornar4.Size = new System.Drawing.Size(35, 23);
+            this.Btn_retornar4.TabIndex = 24;
+            this.Btn_retornar4.UseVisualStyleBackColor = true;
+            this.Btn_retornar4.Click += new System.EventHandler(this.Btn_retornar4_Click);
             // 
-            // Btn_buscar1
+            // Btn_buscar4
             // 
-            this.Btn_buscar1.ImageKey = "Lupa.png";
-            this.Btn_buscar1.ImageList = this.imageList2;
-            this.Btn_buscar1.Location = new System.Drawing.Point(204, 36);
-            this.Btn_buscar1.Name = "Btn_buscar1";
-            this.Btn_buscar1.Size = new System.Drawing.Size(35, 23);
-            this.Btn_buscar1.TabIndex = 23;
-            this.Btn_buscar1.Text = ":::";
-            this.Btn_buscar1.UseVisualStyleBackColor = true;
-            this.Btn_buscar1.Click += new System.EventHandler(this.Btn_buscar1_Click);
+            this.Btn_buscar4.ImageKey = "Lupa.png";
+            this.Btn_buscar4.ImageList = this.imageList2;
+            this.Btn_buscar4.Location = new System.Drawing.Point(204, 36);
+            this.Btn_buscar4.Name = "Btn_buscar4";
+            this.Btn_buscar4.Size = new System.Drawing.Size(35, 23);
+            this.Btn_buscar4.TabIndex = 23;
+            this.Btn_buscar4.UseVisualStyleBackColor = true;
+            this.Btn_buscar4.Click += new System.EventHandler(this.Btn_buscar4_Click);
             // 
-            // Txt_buscar1
+            // Txt_buscar4
             // 
-            this.Txt_buscar1.Location = new System.Drawing.Point(62, 38);
-            this.Txt_buscar1.Name = "Txt_buscar1";
-            this.Txt_buscar1.Size = new System.Drawing.Size(136, 20);
-            this.Txt_buscar1.TabIndex = 22;
+            this.Txt_buscar4.Location = new System.Drawing.Point(62, 38);
+            this.Txt_buscar4.Name = "Txt_buscar4";
+            this.Txt_buscar4.Size = new System.Drawing.Size(136, 20);
+            this.Txt_buscar4.TabIndex = 22;
             // 
-            // label9
+            // label6
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 40);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 13);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Buscar:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Buscar:";
             // 
-            // label8
+            // label7
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(9, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(164, 16);
-            this.label8.TabIndex = 20;
-            this.label8.Text = "LISTADO DE MARCAS";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(9, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(182, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "LISTADO DE DISTRITOS";
             // 
-            // Dgv_marcas
+            // Dgv_distritos
             // 
-            this.Dgv_marcas.AllowUserToAddRows = false;
-            this.Dgv_marcas.AllowUserToDeleteRows = false;
+            this.Dgv_distritos.AllowUserToAddRows = false;
+            this.Dgv_distritos.AllowUserToDeleteRows = false;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(252)))), ((int)(((byte)(191)))));
-            this.Dgv_marcas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.Dgv_marcas.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.Dgv_marcas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.Dgv_distritos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.Dgv_distritos.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.Dgv_distritos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightGreen;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -598,14 +456,14 @@ namespace MiniMarket.presentacion
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_marcas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.Dgv_marcas.ColumnHeadersHeight = 35;
-            this.Dgv_marcas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_marcas.EnableHeadersVisualStyles = false;
-            this.Dgv_marcas.Location = new System.Drawing.Point(12, 76);
-            this.Dgv_marcas.MultiSelect = false;
-            this.Dgv_marcas.Name = "Dgv_marcas";
-            this.Dgv_marcas.ReadOnly = true;
+            this.Dgv_distritos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.Dgv_distritos.ColumnHeadersHeight = 35;
+            this.Dgv_distritos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_distritos.EnableHeadersVisualStyles = false;
+            this.Dgv_distritos.Location = new System.Drawing.Point(12, 76);
+            this.Dgv_distritos.MultiSelect = false;
+            this.Dgv_distritos.Name = "Dgv_distritos";
+            this.Dgv_distritos.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -613,65 +471,35 @@ namespace MiniMarket.presentacion
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_marcas.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.Dgv_marcas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Dgv_marcas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.Dgv_marcas.Size = new System.Drawing.Size(268, 130);
-            this.Dgv_marcas.TabIndex = 19;
-            this.Dgv_marcas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_marcas_CellContentDoubleClick);
+            this.Dgv_distritos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.Dgv_distritos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_distritos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Dgv_distritos.Size = new System.Drawing.Size(502, 130);
+            this.Dgv_distritos.TabIndex = 19;
+            this.Dgv_distritos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_distritos_CellDoubleClick);
             // 
-            // Pnl_listado_um
+            // Pnl_listado_sx
             // 
-            this.Pnl_listado_um.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
-            this.Pnl_listado_um.Controls.Add(this.Btn_retornar2);
-            this.Pnl_listado_um.Controls.Add(this.Btn_buscar2);
-            this.Pnl_listado_um.Controls.Add(this.Txt_buscar2);
-            this.Pnl_listado_um.Controls.Add(this.label10);
-            this.Pnl_listado_um.Controls.Add(this.label11);
-            this.Pnl_listado_um.Controls.Add(this.Dgv_medidas);
-            this.Pnl_listado_um.Location = new System.Drawing.Point(527, 324);
-            this.Pnl_listado_um.Name = "Pnl_listado_um";
-            this.Pnl_listado_um.Size = new System.Drawing.Size(291, 214);
-            this.Pnl_listado_um.TabIndex = 25;
-            this.Pnl_listado_um.Visible = false;
+            this.Pnl_listado_sx.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Pnl_listado_sx.Controls.Add(this.Btn_retornar2);
+            this.Pnl_listado_sx.Controls.Add(this.label11);
+            this.Pnl_listado_sx.Controls.Add(this.Dgv_sexos);
+            this.Pnl_listado_sx.Location = new System.Drawing.Point(550, 213);
+            this.Pnl_listado_sx.Name = "Pnl_listado_sx";
+            this.Pnl_listado_sx.Size = new System.Drawing.Size(294, 162);
+            this.Pnl_listado_sx.TabIndex = 25;
+            this.Pnl_listado_sx.Visible = false;
             // 
             // Btn_retornar2
             // 
             this.Btn_retornar2.ImageKey = "Retornar.png";
             this.Btn_retornar2.ImageList = this.imageList2;
-            this.Btn_retornar2.Location = new System.Drawing.Point(245, 36);
+            this.Btn_retornar2.Location = new System.Drawing.Point(166, 7);
             this.Btn_retornar2.Name = "Btn_retornar2";
             this.Btn_retornar2.Size = new System.Drawing.Size(35, 23);
             this.Btn_retornar2.TabIndex = 24;
             this.Btn_retornar2.UseVisualStyleBackColor = true;
             this.Btn_retornar2.Click += new System.EventHandler(this.Btn_retornar2_Click);
-            // 
-            // Btn_buscar2
-            // 
-            this.Btn_buscar2.ImageKey = "Lupa.png";
-            this.Btn_buscar2.ImageList = this.imageList2;
-            this.Btn_buscar2.Location = new System.Drawing.Point(204, 36);
-            this.Btn_buscar2.Name = "Btn_buscar2";
-            this.Btn_buscar2.Size = new System.Drawing.Size(35, 23);
-            this.Btn_buscar2.TabIndex = 23;
-            this.Btn_buscar2.UseVisualStyleBackColor = true;
-            this.Btn_buscar2.Click += new System.EventHandler(this.Btn_buscar2_Click);
-            // 
-            // Txt_buscar2
-            // 
-            this.Txt_buscar2.Location = new System.Drawing.Point(62, 38);
-            this.Txt_buscar2.Name = "Txt_buscar2";
-            this.Txt_buscar2.Size = new System.Drawing.Size(136, 20);
-            this.Txt_buscar2.TabIndex = 22;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 40);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 13);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Buscar:";
             // 
             // label11
             // 
@@ -679,18 +507,18 @@ namespace MiniMarket.presentacion
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(9, 10);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(266, 16);
+            this.label11.Size = new System.Drawing.Size(151, 16);
             this.label11.TabIndex = 20;
-            this.label11.Text = "LISTADO DE UNIDADES DE MEDIDA";
+            this.label11.Text = "LISTADO DE SEXOS";
             // 
-            // Dgv_medidas
+            // Dgv_sexos
             // 
-            this.Dgv_medidas.AllowUserToAddRows = false;
-            this.Dgv_medidas.AllowUserToDeleteRows = false;
+            this.Dgv_sexos.AllowUserToAddRows = false;
+            this.Dgv_sexos.AllowUserToDeleteRows = false;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(252)))), ((int)(((byte)(191)))));
-            this.Dgv_medidas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.Dgv_medidas.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.Dgv_medidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.Dgv_sexos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.Dgv_sexos.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.Dgv_sexos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightGreen;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -698,14 +526,14 @@ namespace MiniMarket.presentacion
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_medidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.Dgv_medidas.ColumnHeadersHeight = 35;
-            this.Dgv_medidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.Dgv_medidas.EnableHeadersVisualStyles = false;
-            this.Dgv_medidas.Location = new System.Drawing.Point(12, 76);
-            this.Dgv_medidas.MultiSelect = false;
-            this.Dgv_medidas.Name = "Dgv_medidas";
-            this.Dgv_medidas.ReadOnly = true;
+            this.Dgv_sexos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.Dgv_sexos.ColumnHeadersHeight = 35;
+            this.Dgv_sexos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_sexos.EnableHeadersVisualStyles = false;
+            this.Dgv_sexos.Location = new System.Drawing.Point(8, 38);
+            this.Dgv_sexos.MultiSelect = false;
+            this.Dgv_sexos.Name = "Dgv_sexos";
+            this.Dgv_sexos.ReadOnly = true;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -713,12 +541,238 @@ namespace MiniMarket.presentacion
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_medidas.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.Dgv_medidas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Dgv_medidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.Dgv_medidas.Size = new System.Drawing.Size(268, 130);
-            this.Dgv_medidas.TabIndex = 19;
-            this.Dgv_medidas.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_medidas_CellContentDoubleClick);
+            this.Dgv_sexos.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.Dgv_sexos.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_sexos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.Dgv_sexos.Size = new System.Drawing.Size(278, 104);
+            this.Dgv_sexos.TabIndex = 19;
+            this.Dgv_sexos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_sexos_CellDoubleClick);
+            // 
+            // Pnl_listado_tdpc
+            // 
+            this.Pnl_listado_tdpc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(241)))), ((int)(((byte)(176)))));
+            this.Pnl_listado_tdpc.Controls.Add(this.Btn_retornar1);
+            this.Pnl_listado_tdpc.Controls.Add(this.label8);
+            this.Pnl_listado_tdpc.Controls.Add(this.Dgv_tdpc);
+            this.Pnl_listado_tdpc.Location = new System.Drawing.Point(305, 242);
+            this.Pnl_listado_tdpc.Name = "Pnl_listado_tdpc";
+            this.Pnl_listado_tdpc.Size = new System.Drawing.Size(294, 162);
+            this.Pnl_listado_tdpc.TabIndex = 17;
+            this.Pnl_listado_tdpc.Visible = false;
+            // 
+            // Btn_retornar1
+            // 
+            this.Btn_retornar1.ImageKey = "Retornar.png";
+            this.Btn_retornar1.ImageList = this.imageList2;
+            this.Btn_retornar1.Location = new System.Drawing.Point(252, 6);
+            this.Btn_retornar1.Name = "Btn_retornar1";
+            this.Btn_retornar1.Size = new System.Drawing.Size(35, 23);
+            this.Btn_retornar1.TabIndex = 24;
+            this.Btn_retornar1.UseVisualStyleBackColor = true;
+            this.Btn_retornar1.Click += new System.EventHandler(this.Btn_retornar1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(237, 16);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "LISTADO DE TIPO DOCUMENTO";
+            // 
+            // Dgv_tdpc
+            // 
+            this.Dgv_tdpc.AllowUserToAddRows = false;
+            this.Dgv_tdpc.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(252)))), ((int)(((byte)(191)))));
+            this.Dgv_tdpc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.Dgv_tdpc.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.Dgv_tdpc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightGreen;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tdpc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.Dgv_tdpc.ColumnHeadersHeight = 35;
+            this.Dgv_tdpc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_tdpc.EnableHeadersVisualStyles = false;
+            this.Dgv_tdpc.Location = new System.Drawing.Point(9, 37);
+            this.Dgv_tdpc.MultiSelect = false;
+            this.Dgv_tdpc.Name = "Dgv_tdpc";
+            this.Dgv_tdpc.ReadOnly = true;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tdpc.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.Dgv_tdpc.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_tdpc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.Dgv_tdpc.Size = new System.Drawing.Size(278, 104);
+            this.Dgv_tdpc.TabIndex = 19;
+            this.Dgv_tdpc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_tdpc_CellDoubleClick);
+            // 
+            // Txt_observacion_pv
+            // 
+            this.Txt_observacion_pv.Location = new System.Drawing.Point(567, 235);
+            this.Txt_observacion_pv.Multiline = true;
+            this.Txt_observacion_pv.Name = "Txt_observacion_pv";
+            this.Txt_observacion_pv.ReadOnly = true;
+            this.Txt_observacion_pv.Size = new System.Drawing.Size(316, 55);
+            this.Txt_observacion_pv.TabIndex = 12;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(564, 219);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(70, 13);
+            this.label22.TabIndex = 41;
+            this.label22.Text = "Observación:";
+            // 
+            // Btn_lupa4
+            // 
+            this.Btn_lupa4.ImageKey = "Lupa.png";
+            this.Btn_lupa4.ImageList = this.imageList2;
+            this.Btn_lupa4.Location = new System.Drawing.Point(889, 112);
+            this.Btn_lupa4.Name = "Btn_lupa4";
+            this.Btn_lupa4.Size = new System.Drawing.Size(26, 23);
+            this.Btn_lupa4.TabIndex = 10;
+            this.Btn_lupa4.UseVisualStyleBackColor = true;
+            this.Btn_lupa4.Click += new System.EventHandler(this.Btn_lupa4_Click);
+            // 
+            // Txt_distrito
+            // 
+            this.Txt_distrito.Enabled = false;
+            this.Txt_distrito.Location = new System.Drawing.Point(567, 114);
+            this.Txt_distrito.Name = "Txt_distrito";
+            this.Txt_distrito.ReadOnly = true;
+            this.Txt_distrito.Size = new System.Drawing.Size(316, 20);
+            this.Txt_distrito.TabIndex = 39;
+            this.Txt_distrito.TabStop = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(564, 98);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(188, 13);
+            this.label21.TabIndex = 38;
+            this.label21.Text = "Distrito / Provincia / Departamento (*):";
+            // 
+            // Txt_direccion_pv
+            // 
+            this.Txt_direccion_pv.Location = new System.Drawing.Point(567, 157);
+            this.Txt_direccion_pv.Multiline = true;
+            this.Txt_direccion_pv.Name = "Txt_direccion_pv";
+            this.Txt_direccion_pv.ReadOnly = true;
+            this.Txt_direccion_pv.Size = new System.Drawing.Size(316, 55);
+            this.Txt_direccion_pv.TabIndex = 11;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(564, 141);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(68, 13);
+            this.label20.TabIndex = 36;
+            this.label20.Text = "Dirección (*):";
+            // 
+            // Txt_movil_pv
+            // 
+            this.Txt_movil_pv.Location = new System.Drawing.Point(728, 71);
+            this.Txt_movil_pv.MaxLength = 20;
+            this.Txt_movil_pv.Name = "Txt_movil_pv";
+            this.Txt_movil_pv.ReadOnly = true;
+            this.Txt_movil_pv.Size = new System.Drawing.Size(155, 20);
+            this.Txt_movil_pv.TabIndex = 9;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(725, 55);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(96, 13);
+            this.label18.TabIndex = 34;
+            this.label18.Text = "# Telefono - Movil:";
+            // 
+            // Txt_telefono_pv
+            // 
+            this.Txt_telefono_pv.Location = new System.Drawing.Point(567, 71);
+            this.Txt_telefono_pv.MaxLength = 20;
+            this.Txt_telefono_pv.Name = "Txt_telefono_pv";
+            this.Txt_telefono_pv.ReadOnly = true;
+            this.Txt_telefono_pv.Size = new System.Drawing.Size(155, 20);
+            this.Txt_telefono_pv.TabIndex = 8;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(564, 55);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(84, 13);
+            this.label19.TabIndex = 32;
+            this.label19.Text = "# Telefono -Fijo:";
+            // 
+            // Txt_email_pv
+            // 
+            this.Txt_email_pv.Location = new System.Drawing.Point(567, 26);
+            this.Txt_email_pv.MaxLength = 150;
+            this.Txt_email_pv.Name = "Txt_email_pv";
+            this.Txt_email_pv.ReadOnly = true;
+            this.Txt_email_pv.Size = new System.Drawing.Size(277, 20);
+            this.Txt_email_pv.TabIndex = 7;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(564, 10);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(35, 13);
+            this.label17.TabIndex = 30;
+            this.label17.Text = "Email:";
+            // 
+            // Txt_apellidos
+            // 
+            this.Txt_apellidos.Location = new System.Drawing.Point(259, 117);
+            this.Txt_apellidos.MaxLength = 100;
+            this.Txt_apellidos.Name = "Txt_apellidos";
+            this.Txt_apellidos.ReadOnly = true;
+            this.Txt_apellidos.Size = new System.Drawing.Size(155, 20);
+            this.Txt_apellidos.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(256, 101);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(52, 13);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Apellidos:";
+            // 
+            // Txt_nombres
+            // 
+            this.Txt_nombres.Location = new System.Drawing.Point(98, 117);
+            this.Txt_nombres.MaxLength = 100;
+            this.Txt_nombres.Name = "Txt_nombres";
+            this.Txt_nombres.ReadOnly = true;
+            this.Txt_nombres.Size = new System.Drawing.Size(155, 20);
+            this.Txt_nombres.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(95, 101);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(52, 13);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "Nombres:";
             // 
             // Btn_Lupa3
             // 
@@ -727,7 +781,7 @@ namespace MiniMarket.presentacion
             this.Btn_Lupa3.Location = new System.Drawing.Point(276, 188);
             this.Btn_Lupa3.Name = "Btn_Lupa3";
             this.Btn_Lupa3.Size = new System.Drawing.Size(26, 23);
-            this.Btn_Lupa3.TabIndex = 12;
+            this.Btn_Lupa3.TabIndex = 6;
             this.Btn_Lupa3.UseVisualStyleBackColor = true;
             this.Btn_Lupa3.Click += new System.EventHandler(this.Btn_Lupa3_Click);
             // 
@@ -736,8 +790,10 @@ namespace MiniMarket.presentacion
             this.Txt_descripcion_ru.Enabled = false;
             this.Txt_descripcion_ru.Location = new System.Drawing.Point(98, 190);
             this.Txt_descripcion_ru.Name = "Txt_descripcion_ru";
+            this.Txt_descripcion_ru.ReadOnly = true;
             this.Txt_descripcion_ru.Size = new System.Drawing.Size(172, 20);
             this.Txt_descripcion_ru.TabIndex = 11;
+            this.Txt_descripcion_ru.TabStop = false;
             // 
             // label5
             // 
@@ -755,7 +811,7 @@ namespace MiniMarket.presentacion
             this.Btn_lupa2.Location = new System.Drawing.Point(276, 158);
             this.Btn_lupa2.Name = "Btn_lupa2";
             this.Btn_lupa2.Size = new System.Drawing.Size(26, 23);
-            this.Btn_lupa2.TabIndex = 9;
+            this.Btn_lupa2.TabIndex = 5;
             this.Btn_lupa2.UseVisualStyleBackColor = true;
             this.Btn_lupa2.Click += new System.EventHandler(this.Btn_lupa2_Click);
             // 
@@ -764,26 +820,28 @@ namespace MiniMarket.presentacion
             this.Txt_descripcion_sx.Enabled = false;
             this.Txt_descripcion_sx.Location = new System.Drawing.Point(98, 160);
             this.Txt_descripcion_sx.Name = "Txt_descripcion_sx";
+            this.Txt_descripcion_sx.ReadOnly = true;
             this.Txt_descripcion_sx.Size = new System.Drawing.Size(172, 20);
             this.Txt_descripcion_sx.TabIndex = 8;
+            this.Txt_descripcion_sx.TabStop = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(95, 144);
+            this.label4.Location = new System.Drawing.Point(45, 163);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Sexo:";
+            this.label4.Text = "Sexo (*):";
             // 
             // Btn_lupa1
             // 
             this.Btn_lupa1.ImageKey = "Lupa.png";
             this.Btn_lupa1.ImageList = this.imageList2;
-            this.Btn_lupa1.Location = new System.Drawing.Point(259, 13);
+            this.Btn_lupa1.Location = new System.Drawing.Point(276, 11);
             this.Btn_lupa1.Name = "Btn_lupa1";
             this.Btn_lupa1.Size = new System.Drawing.Size(26, 23);
-            this.Btn_lupa1.TabIndex = 6;
+            this.Btn_lupa1.TabIndex = 0;
             this.Btn_lupa1.UseVisualStyleBackColor = true;
             this.Btn_lupa1.Click += new System.EventHandler(this.Btn_lupa1_Click);
             // 
@@ -792,8 +850,10 @@ namespace MiniMarket.presentacion
             this.Txt_descripcion_tdpc.Enabled = false;
             this.Txt_descripcion_tdpc.Location = new System.Drawing.Point(98, 13);
             this.Txt_descripcion_tdpc.Name = "Txt_descripcion_tdpc";
+            this.Txt_descripcion_tdpc.ReadOnly = true;
             this.Txt_descripcion_tdpc.Size = new System.Drawing.Size(172, 20);
             this.Txt_descripcion_tdpc.TabIndex = 5;
+            this.Txt_descripcion_tdpc.TabStop = false;
             // 
             // label3
             // 
@@ -815,7 +875,7 @@ namespace MiniMarket.presentacion
             this.Btn_retornar.Location = new System.Drawing.Point(225, 301);
             this.Btn_retornar.Name = "Btn_retornar";
             this.Btn_retornar.Size = new System.Drawing.Size(75, 23);
-            this.Btn_retornar.TabIndex = 3;
+            this.Btn_retornar.TabIndex = 15;
             this.Btn_retornar.Text = "     Retornar";
             this.Btn_retornar.UseVisualStyleBackColor = false;
             this.Btn_retornar.Click += new System.EventHandler(this.Btn_retornar_Click);
@@ -831,7 +891,7 @@ namespace MiniMarket.presentacion
             this.Btn_guardar.Location = new System.Drawing.Point(120, 301);
             this.Btn_guardar.Name = "Btn_guardar";
             this.Btn_guardar.Size = new System.Drawing.Size(75, 23);
-            this.Btn_guardar.TabIndex = 2;
+            this.Btn_guardar.TabIndex = 14;
             this.Btn_guardar.Text = "     Guardar";
             this.Btn_guardar.UseVisualStyleBackColor = false;
             this.Btn_guardar.Visible = false;
@@ -848,7 +908,7 @@ namespace MiniMarket.presentacion
             this.Btn_cancelar.Location = new System.Drawing.Point(20, 301);
             this.Btn_cancelar.Name = "Btn_cancelar";
             this.Btn_cancelar.Size = new System.Drawing.Size(75, 23);
-            this.Btn_cancelar.TabIndex = 2;
+            this.Btn_cancelar.TabIndex = 13;
             this.Btn_cancelar.Text = "     Cancelar";
             this.Btn_cancelar.UseVisualStyleBackColor = false;
             this.Btn_cancelar.Visible = false;
@@ -857,10 +917,11 @@ namespace MiniMarket.presentacion
             // Txt_razon_social_pv
             // 
             this.Txt_razon_social_pv.Location = new System.Drawing.Point(98, 74);
-            this.Txt_razon_social_pv.MaxLength = 100;
+            this.Txt_razon_social_pv.MaxLength = 150;
             this.Txt_razon_social_pv.Name = "Txt_razon_social_pv";
+            this.Txt_razon_social_pv.ReadOnly = true;
             this.Txt_razon_social_pv.Size = new System.Drawing.Size(316, 20);
-            this.Txt_razon_social_pv.TabIndex = 1;
+            this.Txt_razon_social_pv.TabIndex = 2;
             // 
             // label14
             // 
@@ -869,13 +930,14 @@ namespace MiniMarket.presentacion
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(86, 13);
             this.label14.TabIndex = 0;
-            this.label14.Text = "Rozan Social (*):";
+            this.label14.Text = "Razon Social (*):";
             // 
             // Txt_nrodocumento_pv
             // 
             this.Txt_nrodocumento_pv.Location = new System.Drawing.Point(98, 44);
-            this.Txt_nrodocumento_pv.MaxLength = 100;
+            this.Txt_nrodocumento_pv.MaxLength = 20;
             this.Txt_nrodocumento_pv.Name = "Txt_nrodocumento_pv";
+            this.Txt_nrodocumento_pv.ReadOnly = true;
             this.Txt_nrodocumento_pv.Size = new System.Drawing.Size(119, 20);
             this.Txt_nrodocumento_pv.TabIndex = 1;
             // 
@@ -987,7 +1049,7 @@ namespace MiniMarket.presentacion
             this.Controls.Add(this.Btn_nuevo);
             this.Controls.Add(this.Tbp_principal);
             this.Name = "Frm_Proveedores";
-            this.Text = "e";
+            this.Text = "Proveedores";
             this.Load += new System.EventHandler(this.Frm_Proveedores_Load);
             this.Tbp_principal.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -995,15 +1057,18 @@ namespace MiniMarket.presentacion
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_principal)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.Pnl_listado_ca.ResumeLayout(false);
-            this.Pnl_listado_ca.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_categorias)).EndInit();
-            this.Pnl_listado_marcas.ResumeLayout(false);
-            this.Pnl_listado_marcas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_marcas)).EndInit();
-            this.Pnl_listado_um.ResumeLayout(false);
-            this.Pnl_listado_um.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dgv_medidas)).EndInit();
+            this.Pnl_listado_ru.ResumeLayout(false);
+            this.Pnl_listado_ru.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_rubros)).EndInit();
+            this.Pnl_listado_di.ResumeLayout(false);
+            this.Pnl_listado_di.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_distritos)).EndInit();
+            this.Pnl_listado_sx.ResumeLayout(false);
+            this.Pnl_listado_sx.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_sexos)).EndInit();
+            this.Pnl_listado_tdpc.ResumeLayout(false);
+            this.Pnl_listado_tdpc.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_tdpc)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1036,32 +1101,26 @@ namespace MiniMarket.presentacion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Txt_descripcion_tdpc;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel Pnl_listado_marcas;
+        private System.Windows.Forms.Panel Pnl_listado_tdpc;
         private System.Windows.Forms.Button Btn_retornar1;
-        private System.Windows.Forms.Button Btn_buscar1;
-        private System.Windows.Forms.TextBox Txt_buscar1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView Dgv_marcas;
+        private System.Windows.Forms.DataGridView Dgv_tdpc;
         private System.Windows.Forms.Button Btn_lupa1;
-        private System.Windows.Forms.Panel Pnl_listado_um;
+        private System.Windows.Forms.Panel Pnl_listado_sx;
         private System.Windows.Forms.Button Btn_retornar2;
-        private System.Windows.Forms.Button Btn_buscar2;
-        private System.Windows.Forms.TextBox Txt_buscar2;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView Dgv_medidas;
-        private System.Windows.Forms.Panel Pnl_listado_ca;
+        private System.Windows.Forms.DataGridView Dgv_sexos;
+        private System.Windows.Forms.Panel Pnl_listado_ru;
         private System.Windows.Forms.Button Btn_retornar3;
         private System.Windows.Forms.Button Btn_buscar3;
         private System.Windows.Forms.TextBox Txt_buscar3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView Dgv_categorias;
+        private System.Windows.Forms.DataGridView Dgv_rubros;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.TextBox Txt_observacion_pv;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_lupa4;
         private System.Windows.Forms.TextBox Txt_distrito;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox Txt_direccion_pv;
@@ -1078,5 +1137,12 @@ namespace MiniMarket.presentacion
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox Txt_razon_social_pv;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel Pnl_listado_di;
+        private System.Windows.Forms.Button Btn_retornar4;
+        private System.Windows.Forms.Button Btn_buscar4;
+        private System.Windows.Forms.TextBox Txt_buscar4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView Dgv_distritos;
     }
 }

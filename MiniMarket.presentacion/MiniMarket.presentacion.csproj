@@ -131,6 +131,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_MiniMarket.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Frm_rpt_,Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_rpt_,Proveedores.Designer.cs">
+      <DependentUpon>Frm_rpt_,Proveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Frm_Rpt_Almacenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,12 @@
     </Compile>
     <Compile Include="Reportes\Frm_Rpt_Marcas.Designer.cs">
       <DependentUpon>Frm_Rpt_Marcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Frm_rpt_productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Frm_rpt_productos.Designer.cs">
+      <DependentUpon>Frm_rpt_productos.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\Frm_Rpt_Provincias.cs">
       <SubType>Form</SubType>
@@ -219,6 +231,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\Frm_rpt_,Proveedores.resx">
+      <DependentUpon>Frm_rpt_,Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Rpt_Almacenes.resx">
       <DependentUpon>Frm_Rpt_Almacenes.cs</DependentUpon>
     </EmbeddedResource>
@@ -234,6 +249,9 @@
     <EmbeddedResource Include="Reportes\Frm_Rpt_Marcas.resx">
       <DependentUpon>Frm_Rpt_Marcas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Frm_rpt_productos.resx">
+      <DependentUpon>Frm_rpt_productos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Frm_Rpt_Provincias.resx">
       <DependentUpon>Frm_Rpt_Provincias.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +263,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Rpt_Departamentos.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Distritos.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Productos.rdlc" />
+    <EmbeddedResource Include="Reportes\Rpt_Proveedores.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Provincias.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Rubros.rdlc" />
     <EmbeddedResource Include="Reportes\Rpt_Almacenes.rdlc" />

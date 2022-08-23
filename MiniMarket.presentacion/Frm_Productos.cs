@@ -364,7 +364,7 @@ namespace MiniMarket.presentacion
 
         private void Btn_reporte_Click(object sender, EventArgs e)
         {
-            Reportes.Frm_Rpt_Almacenes oRpt3 = new Reportes.Frm_Rpt_Almacenes();
+            Reportes.Frm_rpt_productos oRpt3 = new Reportes.Frm_rpt_productos();
             oRpt3.txt_p1.Text = Txt_buscar.Text;
             oRpt3.ShowDialog();
         }

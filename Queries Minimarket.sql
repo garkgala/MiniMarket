@@ -542,7 +542,8 @@ INNER JOIN	TB_SEXOS					d on d.codigo_sx = a.codigo_sx
 INNER JOIN	TB_DISTRITOS				e on e.codigo_di = a.codigo_di
 INNER JOIN	TB_PROVINCIAS				f on f.codigo_po = e.codigo_po
 INNER JOIN	TB_DEPARTAMENTOS			g on g.codigo_de = f.codigo_de
-WHERE	upper(trim(cast(a.codigo_pv as char)) +
+WHERE a.estado=1 and
+		upper(trim(cast(a.codigo_pv as char)) +
 		trim(b.descripcion_tdpc) +
 		trim(a.nrodocumento_pv) +
 		trim(a.razon_social_pv) +
@@ -653,11 +654,29 @@ as
 
  GO
 
-Create procedure Sp_Listado_ca_pr    
-@cTexto varchar(20)=''        
+Create procedure Sp_Listado_ru_pv  
+@cTexto varchar(60)=''        
 as        
- select  descripcion_ca, codigo_ca        
- from dbo.TB_CATEGORIAS      
+ select  descripcion_ru, codigo_ru        
+ from dbo.TB_RUBROS      
  WHERE estado=1 and         
- upper(trim(descripcion_ca))         
+ upper(trim(descripcion_ru))         
+ like '%' + upper(trim(@cTexto)) + '%'; 
+
+ GO
+
+ Create procedure Sp_Listado_di_pv  
+@cTexto varchar(60)=''        
+as        
+ select		a.descripcion_di, 
+			b.descripcion_po,
+			c.descripcion_de,
+			a.codigo_di        
+ from dbo.TB_DISTRITOS a      
+ INNER JOIN TB_PROVINCIAS b on b.codigo_po = a.codigo_po
+ INNER JOIN TB_DEPARTAMENTOS c on c.codigo_de = b.codigo_de
+ WHERE a.estado=1 and         
+ upper( trim(a.descripcion_di)+ 
+		trim(b.descripcion_po)+ 
+		trim(c.descripcion_de))         
  like '%' + upper(trim(@cTexto)) + '%'; 

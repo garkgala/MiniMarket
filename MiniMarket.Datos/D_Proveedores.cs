@@ -36,7 +36,7 @@ namespace MiniMarket.Datos
                 if (SQLCon.State == ConnectionState.Open) SQLCon.Close();
             }
         }
-        public string Guardar_pr(int nOpcion, E_Proveedores oPv)
+        public string Guardar_pv(int nOpcion, E_Proveedores oPv)
         {
             string Rpta = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -74,7 +74,7 @@ namespace MiniMarket.Datos
             return Rpta;
         }
 
-        public string Eliminar_pr(int Codigo_pv)
+        public string Eliminar_pv(int Codigo_pv)
         {
             string Rpta = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -148,13 +148,39 @@ namespace MiniMarket.Datos
         }
         public DataTable Listado_ru_pv(string cTexto)
         {
-            SqlDataReader resultado;
+            SqlDataReader resultado;    
             DataTable Tabla = new DataTable();
             SqlConnection SQLCon = new SqlConnection();
             try
             {
                 SQLCon = conexion.getInstancia().CrearConexion();
                 SqlCommand Comando = new SqlCommand("Sp_Listado_ru_pv", SQLCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
+                SQLCon.Open();
+                resultado = Comando.ExecuteReader();
+                Tabla.Load(resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SQLCon.State == ConnectionState.Open) SQLCon.Close();
+            }
+        }
+
+        public DataTable Listado_di_pv(string cTexto)
+        {
+            SqlDataReader resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SQLCon = new SqlConnection();
+            try
+            {
+                SQLCon = conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("Sp_Listado_di_pv", SQLCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@cTexto", SqlDbType.VarChar).Value = cTexto;
                 SQLCon.Open();
